@@ -13,7 +13,7 @@ export default function AllMonstersList() {
     <>
       <h1>Monsters of DnD</h1>
       {monsterList.map((monster) => (
-        <h2>{monster.name}</h2>
+        <h3>{monster.name}</h3>
       ))}
     </>
   )
