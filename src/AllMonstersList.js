@@ -12,8 +12,8 @@ export default function AllMonstersList() {
   return (
     <>
       <h1>Monsters of DnD</h1>
-      {monsterList.map((monster) => (
-        <h2>{monster.name}</h2>
+      {monsterList.map((monster, index) => (
+        <h2 key={index}>{monster.name}</h2>
       ))}
     </>
   )
