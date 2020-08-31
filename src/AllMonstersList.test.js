@@ -6,19 +6,19 @@ import AllMonstersList from './AllMonstersList'
 
 describe('AllMonstersList', () => {
   const headline = 'Monsters of DnD'
-  const monsterListItems = 'Aboleth'
+  const monsterListItem = 'Aboleth'
 
   it('displays the headline, followed by the first listitem which is aboleth', () => {
     const { getByText } = render(
-      <AllMonstersList headline={headline} listitems={monsterListItems} />
+      <AllMonstersList headline={headline} listitems={monsterListItem} />
     )
 
     expect(getByText(headline)).toBeInTheDocument()
-    expect(monsterListItems).toMatchSnapshot()
+    expect(monsterListItem).toMatchSnapshot()
   })
   it('renders correctly', () => {
     const list = renderer.create(
-      <AllMonstersList headline={headline} listitem={monsterListItems} />
+      <AllMonstersList headline={headline} listitem={monsterListItem} />
     )
     expect(list).toMatchSnapshot()
   })
