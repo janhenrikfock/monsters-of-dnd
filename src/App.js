@@ -1,7 +1,7 @@
 import React from 'react'
-import MonsterList from './MonsterList'
+import AllMonstersList from './AllMonstersList'
 
 function App() {
-  return <MonsterList />
+  return <AllMonstersList />
 }
 export default App

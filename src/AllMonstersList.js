@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-export default function MonsterList() {
+export default function AllMonstersList() {
   const [monsterList, setMonsterList] = useState([])
 
   useEffect(() => {

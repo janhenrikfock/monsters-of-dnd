@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`MonsterList displays the headline, followed by the first listitem which is aboleth 1`] = `"Aboleth"`;
-
-exports[`MonsterList renders correctly 1`] = `
-<h1>
-  Monsters of DnD
-</h1>
-`;
