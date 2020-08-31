@@ -5,20 +5,20 @@ import renderer from 'react-test-renderer'
 import MonsterList from './MonsterList'
 
 describe('MonsterList', () => {
-  const headline = 'This is an headline'
-  const monsterListItem = 'This is one monstername in the list'
+  const headline = 'Monsters of DnD'
+  const monsterListItems = 'Aboleth'
 
-  it('displays the hedline, followed by all the monsters', () => {
+  it('displays the headline, followed by the first listitem which is aboleth', () => {
     const { getByText } = render(
-      <MonsterList headline={headline} listitem={monsterListItem} />
+      <MonsterList headline={headline} listitems={monsterListItems} />
     )
 
     expect(getByText(headline)).toBeInTheDocument()
-    expect(getByText(monsterListItem)).toBeInTheDocument()
+    expect(monsterListItems).toMatchSnapshot()
   })
   it('renders correctly', () => {
     const list = renderer.create(
-      <MonsterList headline={headline} listitem={monsterListItem} />
+      <MonsterList headline={headline} listitem={monsterListItems} />
     )
     expect(list).toMatchSnapshot()
   })
