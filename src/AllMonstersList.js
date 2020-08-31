@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
 
 export default function AllMonstersList() {
   const [monsterList, setMonsterList] = useState([])
@@ -11,10 +12,20 @@ export default function AllMonstersList() {
   })
   return (
     <>
-      <h1>Monsters of DnD</h1>
-      {monsterList.map((monster) => (
-        <h3>{monster.name}</h3>
+      <Headline>Monsters of DnD</Headline>
+      {monsterList.map((monster, index) => (
+        <ListItem key={index}>{monster.name}</ListItem>
       ))}
     </>
   )
 }
+const Headline = styled.h1`
+  text-align: center;
+  border-bottom: 10px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--highlightred);
+`
+const ListItem = styled.h3`
+  width: 70%;
+  margin-left: 15%;
+`
