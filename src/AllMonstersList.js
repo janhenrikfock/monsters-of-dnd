@@ -12,9 +12,11 @@ export default function AllMonstersList() {
   })
   return (
     <>
+
       <Headline>Monsters of DnD</Headline>
       {monsterList.map((monster, index) => (
         <ListItem key={index}>{monster.name}</ListItem>
+
       ))}
     </>
   )
