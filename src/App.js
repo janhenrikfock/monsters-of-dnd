@@ -1,8 +1,7 @@
 import React from 'react'
-import Monsterlist from './Monsterlist'
+import MonsterList from './MonsterList'
 
 function App() {
-  return <Monsterlist />
+  return <MonsterList />
 }
-
 export default App

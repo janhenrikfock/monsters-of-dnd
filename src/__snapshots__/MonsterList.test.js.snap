@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MonsterList renders correctly 1`] = `
+<h1>
+  Monsters of DnD
+</h1>
+`;
