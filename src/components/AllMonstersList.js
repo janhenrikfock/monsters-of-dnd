@@ -4,9 +4,7 @@ import saveLocally from './lib/saveLocally'
 import loadLocally from './lib/saveLocally'
 
 export default function AllMonstersList() {
-  const [monsterList, setMonsterList] = useState(
-    loadLocally('monsternames') ?? []
-  )
+  const [monsterList, setMonsterList] = useState([])
 
   useEffect(() => {
     fetch(`https://www.dnd5eapi.co/api/monsters`)
