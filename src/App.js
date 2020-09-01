@@ -1,5 +1,5 @@
 import React from 'react'
-import AllMonstersList from './AllMonstersList'
+import AllMonstersList from './components/AllMonstersList'
 
 function App() {
   return <AllMonstersList />
