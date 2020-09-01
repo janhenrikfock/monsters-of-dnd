@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import saveLocally from './lib/saveLocally'
-import loadLocally from './lib/saveLocally'
 
 export default function AllMonstersList() {
   const [monsterList, setMonsterList] = useState([])
