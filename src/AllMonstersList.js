@@ -12,22 +12,19 @@ export default function AllMonstersList() {
   })
   return (
     <>
-
-      <Headline>Monsters of DnD</Headline>
+      <HeadlineStyled>Monsters of DnD</HeadlineStyled>
       {monsterList.map((monster, index) => (
-        <ListItem key={index}>{monster.name}</ListItem>
-
+        <MonsterEntryStyled key={index}>{monster.name}</MonsterEntryStyled>
       ))}
     </>
   )
 }
-const Headline = styled.h1`
+const HeadlineStyled = styled.h1`
   text-align: center;
-  border-bottom: 10px;
-  border-bottom-style: solid;
-  border-bottom-color: var(--highlightred);
+  border-bottom: 8px solid var(--highlightred);
 `
-const ListItem = styled.h3`
+const MonsterEntryStyled = styled.h2`
   width: 70%;
   margin-left: 15%;
+  font-size: 90%;
 `
