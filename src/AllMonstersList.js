@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 export default function AllMonstersList() {
   const [monsterListStart, setMonsterListStart] = useState([])
@@ -7,16 +7,17 @@ export default function AllMonstersList() {
   useEffect(() => {
     fetch(`https://www.dnd5eapi.co/api/monsters`)
       .then((res) => res.json())
-      .then((data) => data.slice(24))
-      .then((dataStart) => setMonsterListStart(dataStart.results))
+      .then((data) => data.results.slice(0, 24))
+      .then((data) => console.log(data))
+      .then((data) => setMonsterListStart(data))
       .catch((err) => console.log(err))
   }, [])
 
   return (
     <>
       <HeadlineStyled>Monsters of DnD</HeadlineStyled>
-      {monsterListStart.map((monster, index) => (
-        <MonsterEntryStyled key={index}>{monster.name}</MonsterEntryStyled>
+      {monsterListStart.map((name, index) => (
+        <MonsterEntryStyled key={index}>{name}</MonsterEntryStyled>
       ))}
     </>
   )
