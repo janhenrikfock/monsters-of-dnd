@@ -2,18 +2,20 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 export default function AllMonstersList() {
-  const [monsterList, setMonsterList] = useState([])
+  const [monsterListStart, setMonsterListStart] = useState([])
 
   useEffect(() => {
     fetch(`https://www.dnd5eapi.co/api/monsters`)
       .then((res) => res.json())
-      .then((data) => setMonsterList(data.results))
+      .then((data) => data.slice(24))
+      .then((dataStart) => setMonsterListStart(dataStart.results))
       .catch((err) => console.log(err))
-  })
+  }, [])
+
   return (
     <>
       <HeadlineStyled>Monsters of DnD</HeadlineStyled>
-      {monsterList.map((monster, index) => (
+      {monsterListStart.map((monster, index) => (
         <MonsterEntryStyled key={index}>{monster.name}</MonsterEntryStyled>
       ))}
     </>
