@@ -9,7 +9,7 @@ export default function AllMonstersList() {
       .then((res) => res.json())
       .then((data) => setMonsterList(data.results))
       .catch((err) => console.log(err))
-  })
+  }, [])
   return (
     <>
       <HeadlineStyled>Monsters of DnD</HeadlineStyled>
