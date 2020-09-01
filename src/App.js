@@ -1,8 +1,7 @@
 import React from 'react'
-import './App.css'
+import AllMonstersList from './AllMonstersList'
 
 function App() {
-  return <p>Platzhalter</p>
+  return <AllMonstersList />
 }
-
 export default App
