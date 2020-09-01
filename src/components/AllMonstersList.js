@@ -6,19 +6,25 @@ export default function AllMonstersList() {
   const [monsterList, setMonsterList] = useState([])
 
   useEffect(() => {
-    fetch(`https://www.dnd5eapi.co/api/monsters`)
-      .then((res) => res.json())
-      .then((data) => setMonsterList(data.results))
-      .catch((err) => console.log(err))
+    const loadedArray = JSON.parse(localStorage.getItem('monsternames'))
+    console.log(loadedArray)
+    if (!loadedArray || loadedArray === []) {
+      fetch(`https://www.dnd5eapi.co/api/monsters`)
+        .then((res) => res.json())
+        .then((data) => {
+          setMonsterList(data.results)
+          saveLocally(data.results)
+        })
+        .catch((err) => console.log(err))
+    } else {
+      setMonsterList(loadedArray)
+    }
   }, [])
-
-  saveLocally(monsterList)
-  const loadedArray = JSON.parse(localStorage.getItem('monsternames'))
 
   return (
     <>
       <HeadlineStyled>Monsters of DnD</HeadlineStyled>
-      {loadedArray.map((monster, index) => (
+      {monsterList.map((monster, index) => (
         <MonsterEntryStyled key={index}>{monster.name}</MonsterEntryStyled>
       ))}
     </>
