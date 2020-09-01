@@ -7,8 +7,8 @@ export default function AllMonstersList() {
 
   useEffect(() => {
     const loadedArray = JSON.parse(localStorage.getItem('monsternames'))
-    console.log(loadedArray)
-    if (!loadedArray || loadedArray === []) {
+
+    if (!loadedArray || loadedArray.length === 0) {
       fetch(`https://www.dnd5eapi.co/api/monsters`)
         .then((res) => res.json())
         .then((data) => {
