@@ -5,6 +5,7 @@ import OneMonsterItem from './OneMonsterItem'
 
 export default function AllMonstersList() {
   const [monsterList, setMonsterList] = useState([])
+  const [monsterDetails, setMonsterDetails] = useState([])
 
   useEffect(() => {
     const loadedArray = JSON.parse(localStorage.getItem('monsternames'))
@@ -25,7 +26,7 @@ export default function AllMonstersList() {
   return (
     <>
       <HeadlineStyled>Monsters of DnD</HeadlineStyled>
-      {monsterList.map((monster, index) => (
+      {monsterList.map((monster) => (
         <OneMonsterItem monster={monster}></OneMonsterItem>
       ))}
     </>
@@ -35,3 +36,6 @@ const HeadlineStyled = styled.h1`
   text-align: center;
   border-bottom: 8px solid var(--highlightred);
 `
+function getMonsterDetails () {
+  const locallyLoadedMonsterDetails = 
+}
