@@ -13,7 +13,7 @@ export default function AllMonstersList() {
         .then((res) => res.json())
         .then((data) => {
           setMonsterList(data.results)
-          saveLocally(data.results)
+          saveLocally('monsternames', data.results)
         })
         .catch((err) => console.log(err))
     } else {

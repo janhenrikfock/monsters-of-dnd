@@ -1,3 +1,3 @@
-export default function saveLocally(arrayOfObjects) {
-  localStorage.setItem('monsternames', JSON.stringify(arrayOfObjects))
+export default function saveLocally(key, arrayOfObjects) {
+  localStorage.setItem(key, JSON.stringify(arrayOfObjects))
 }
