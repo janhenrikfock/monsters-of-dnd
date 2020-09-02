@@ -3,7 +3,9 @@
 exports[`AllMonstersList displays the headline, followed by the first listitem which is aboleth 1`] = `"Aboleth"`;
 
 exports[`AllMonstersList renders correctly 1`] = `
-<h1>
+<h1
+  className="sc-AxjAm kdgGpd"
+>
   Monsters of DnD
 </h1>
 `;
