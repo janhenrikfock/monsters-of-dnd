@@ -21,7 +21,28 @@ export default function AllMonstersList() {
     } else {
       setMonsterList(loadedArray)
     }
-  }, [])
+  }, [])}
+
+  useEffect(() => {
+    const locallyLoadedMonsterDetails = JSON.parse(
+      localStorage.getItem('monsterdetail')
+    )
+
+    if (
+      !locallyLoadedMonsterDetails ||
+      locallyLoadedMonsterDetails.length === 0
+    ) {
+      monsterList.map((monster) => {
+        fetch('https://www.dnd5eapi.co' + monster.url)
+          .then((res) => res.json())
+          .then((data) => {
+            setMonsterDetails(monsterDetails, ...data.results)
+            saveLocally('monsterdetail', setMonsterDetails)
+          })
+          .catch((err) => console.log(err))
+      },[])
+    
+  
 
   return (
     <>
@@ -32,10 +53,9 @@ export default function AllMonstersList() {
     </>
   )
 }
+  
+
 const HeadlineStyled = styled.h1`
   text-align: center;
   border-bottom: 8px solid var(--highlightred);
 `
-function getMonsterDetails () {
-  const locallyLoadedMonsterDetails = 
-}

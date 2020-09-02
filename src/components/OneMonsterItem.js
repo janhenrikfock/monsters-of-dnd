@@ -14,30 +14,32 @@ export default function OneMonsterItem({ monster, index }) {
 }
 const ContainerStyled = styled.div`
   width: 70%;
-  margin-left: 15%;
+  border-radius: 12px;
+  margin: 10px 15%;
 `
 const MonsterNameStyled = styled.h2`
-  font-size: 100%;
+  font-size: 80%;
+  font-weight: 1000;
   text-align: left;
-  padding: 10px;
+
   margin: 0;
-  vertical-align: bottom;
+  vertical-align: text-bottom;
   border-bottom: 4px solid var(--highlightred);
   border-left: 4px solid var(--highlightred);
+  line-height: min-content;
 `
 const ContainerTypeCR = styled.div`
   display: flex;
-  padding: 0;
 `
 const ParagraphType = styled.p`
+  font-size: 80%;
   flex: 1 1;
-  padding: 10px;
   margin: 0;
   text-align: left;
 `
 const ParagraphCR = styled.p`
+  font-size: 80%;
   flex: 1 1;
-  padding: 10px;
   margin: 0;
   text-align: right;
 `
