@@ -8,9 +8,11 @@ export default function AllMonstersList() {
   const [monsterDetails, setMonsterDetails] = useState([])
 
   useEffect(() => {
-    const loadedArray = JSON.parse(localStorage.getItem('monsternames'))
+    const locallyLoadedMonsterNames = JSON.parse(
+      localStorage.getItem('monsternames')
+    )
 
-    if (!loadedArray || loadedArray.length === 0) {
+    if (!locallyLoadedMonsterNames || locallyLoadedMonsterNames.length === 0) {
       fetch(`https://www.dnd5eapi.co/api/monsters`)
         .then((res) => res.json())
         .then((data) => {
@@ -19,41 +21,28 @@ export default function AllMonstersList() {
         })
         .catch((err) => console.log(err))
     } else {
-      setMonsterList(loadedArray)
+      setMonsterList(locallyLoadedMonsterNames)
     }
-  }, [])}
+  }, [])
 
-  useEffect(() => {
-    const locallyLoadedMonsterDetails = JSON.parse(
-      localStorage.getItem('monsterdetail')
-    )
-
-    if (
-      !locallyLoadedMonsterDetails ||
-      locallyLoadedMonsterDetails.length === 0
-    ) {
-      monsterList.map((monster) => {
-        fetch('https://www.dnd5eapi.co' + monster.url)
-          .then((res) => res.json())
-          .then((data) => {
-            setMonsterDetails(monsterDetails, ...data.results)
-            saveLocally('monsterdetail', setMonsterDetails)
-          })
-          .catch((err) => console.log(err))
-      },[])
-    
-  
+  fetch(`https://www.dnd5eapi.co/api/monsters/efreeti`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data)
+      setMonsterDetails(data.results)
+      saveLocally('monsternames', { data })
+    })
+    .catch((err) => console.log(err))
 
   return (
     <>
       <HeadlineStyled>Monsters of DnD</HeadlineStyled>
-      {monsterList.map((monster) => (
-        <OneMonsterItem monster={monster}></OneMonsterItem>
+      {monsterList.map((monster, index) => (
+        <OneMonsterItem key={index} monster={monster}></OneMonsterItem>
       ))}
     </>
   )
 }
-  
 
 const HeadlineStyled = styled.h1`
   text-align: center;
