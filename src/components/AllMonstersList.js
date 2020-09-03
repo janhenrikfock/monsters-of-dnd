@@ -24,8 +24,8 @@ export default function AllMonstersList() {
             fetch(`https://www.dnd5eapi.co${monster.url}`)
               .then((res) => res.json())
               .then((data) => {
-                setMonsterDetails(data)
                 console.log(data.index)
+                setMonsterDetails((monsterDetails) => [...monsterDetails, data])
               })
           })
         })
@@ -34,6 +34,7 @@ export default function AllMonstersList() {
       setMonsterList(locallyLoadedMonsterNames)
     }
   }, [])
+  saveLocally('monsterdetails', monsterDetails)
 
   return (
     <>
