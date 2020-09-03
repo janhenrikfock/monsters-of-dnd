@@ -8,6 +8,8 @@ export default function AllMonstersList() {
   const [monsterDetails, setMonsterDetails] = useState([])
 
   useEffect(() => {
+    localStorage.clear()
+    console.clear()
     const locallyLoadedMonsterNames = JSON.parse(
       localStorage.getItem('monsternames')
     )
@@ -18,21 +20,20 @@ export default function AllMonstersList() {
         .then((data) => {
           setMonsterList(data.results)
           saveLocally('monsternames', data.results)
+          data.results.forEach((monster) => {
+            fetch(`https://www.dnd5eapi.co${monster.url}`)
+              .then((res) => res.json())
+              .then((data) => {
+                setMonsterDetails(data)
+                console.log(data.index)
+              })
+          })
         })
         .catch((err) => console.log(err))
     } else {
       setMonsterList(locallyLoadedMonsterNames)
     }
   }, [])
-
-  fetch(`https://www.dnd5eapi.co/api/monsters/efreeti`)
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data)
-      setMonsterDetails(data.results)
-      saveLocally('monsternames', { data })
-    })
-    .catch((err) => console.log(err))
 
   return (
     <>
