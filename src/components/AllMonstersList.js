@@ -8,8 +8,6 @@ export default function AllMonstersList() {
   const [monsterDetails, setMonsterDetails] = useState([])
 
   useEffect(() => {
-    // localStorage.clear()
-    // console.clear()
     const locallyLoadedMonsterNames = JSON.parse(
       localStorage.getItem('monsternames')
     )
@@ -24,7 +22,6 @@ export default function AllMonstersList() {
             fetch(`https://www.dnd5eapi.co${monster.url}`)
               .then((res) => res.json())
               .then((data) => {
-                console.log(data.index)
                 setMonsterDetails((monsterDetails) => [...monsterDetails, data])
               })
           })
