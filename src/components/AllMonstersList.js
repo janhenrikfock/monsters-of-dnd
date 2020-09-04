@@ -4,7 +4,6 @@ import saveLocally from './lib/saveLocally'
 import OneMonsterItem from './OneMonsterItem'
 
 export default function AllMonstersList() {
-  const [monsterList, setMonsterList] = useState([])
   const [monsterDetails, setMonsterDetails] = useState([])
 
   useEffect(() => {
@@ -16,7 +15,6 @@ export default function AllMonstersList() {
       fetch(`https://www.dnd5eapi.co/api/monsters`)
         .then((res) => res.json())
         .then((data) => {
-          setMonsterList(data.results)
           saveLocally('monsternames', data.results)
           data.results.forEach((monster) => {
             fetch(`https://www.dnd5eapi.co${monster.url}`)
@@ -27,8 +25,6 @@ export default function AllMonstersList() {
           })
         })
         .catch((err) => console.log(err))
-    } else {
-      setMonsterList(locallyLoadedMonsterNames)
     }
   }, [])
 
@@ -39,7 +35,7 @@ export default function AllMonstersList() {
   return (
     <>
       <HeadlineStyled>Monsters of DnD</HeadlineStyled>
-      {monsterList.map((monster, index) => (
+      {monsterDetails.map((monster, index) => (
         <OneMonsterItem key={index} monster={monster}></OneMonsterItem>
       ))}
     </>

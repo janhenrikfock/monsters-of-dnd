@@ -6,8 +6,8 @@ export default function OneMonsterItem({ monster, index }) {
     <ContainerStyled>
       <MonsterNameStyled>{monster.name}</MonsterNameStyled>
       <ContainerTypeCR>
-        <ParagraphType>Type</ParagraphType>
-        <ParagraphCR>1/8</ParagraphCR>
+        <ParagraphType>{monster.type}</ParagraphType>
+        <ParagraphCR>{monster.challenge_rating}</ParagraphCR>
       </ContainerTypeCR>
     </ContainerStyled>
   )
