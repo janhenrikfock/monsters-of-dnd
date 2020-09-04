@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function OneMonsterItem({ monster, index }) {
+export default function OneMonsterItem({ monster }) {
   return (
     <ContainerStyled>
       <MonsterNameStyled>{monster.name}</MonsterNameStyled>
@@ -21,7 +21,6 @@ const MonsterNameStyled = styled.h2`
   font-size: 80%;
   font-weight: 1000;
   text-align: left;
-
   margin: 0;
   vertical-align: text-bottom;
   border-bottom: 4px solid var(--highlightred);

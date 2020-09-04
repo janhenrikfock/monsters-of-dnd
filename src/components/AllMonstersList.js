@@ -34,7 +34,7 @@ export default function AllMonstersList() {
   } else if (localStorage.getItem('monsterdetails')) {
     setMonsterDetails(JSON.parse(localStorage.getItem('monsterdetails')))
   }
-
+  console.log(monsterDetails)
   return (
     <>
       <HeadlineStyled>Monsters of DnD</HeadlineStyled>
