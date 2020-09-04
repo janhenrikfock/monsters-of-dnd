@@ -8,8 +8,8 @@ export default function AllMonstersList() {
   const [monsterDetails, setMonsterDetails] = useState([])
 
   useEffect(() => {
-    localStorage.clear()
-    console.clear()
+    // localStorage.clear()
+    // console.clear()
     const locallyLoadedMonsterNames = JSON.parse(
       localStorage.getItem('monsternames')
     )
@@ -34,7 +34,10 @@ export default function AllMonstersList() {
       setMonsterList(locallyLoadedMonsterNames)
     }
   }, [])
-  saveLocally('monsterdetails', monsterDetails)
+
+  if (monsterDetails.length !== 0) {
+    saveLocally('monsterdetails', monsterDetails)
+  }
 
   return (
     <>
@@ -47,6 +50,7 @@ export default function AllMonstersList() {
 }
 
 const HeadlineStyled = styled.h1`
+  font-size: 150%;
   text-align: center;
   border-bottom: 8px solid var(--highlightred);
 `
