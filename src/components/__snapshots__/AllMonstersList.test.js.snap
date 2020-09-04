@@ -4,7 +4,7 @@ exports[`AllMonstersList displays the headline, followed by the first listitem w
 
 exports[`AllMonstersList renders correctly 1`] = `
 <h1
-  className="sc-AxjAm kdgGpd"
+  className="sc-AxgMl gLIsDk"
 >
   Monsters of DnD
 </h1>
