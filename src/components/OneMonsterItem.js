@@ -23,8 +23,8 @@ const MonsterNameStyled = styled.h2`
   text-align: left;
   margin: 0;
   vertical-align: text-bottom;
-  border-bottom: 4px solid var(--highlightred);
-  border-left: 4px solid var(--highlightred);
+  border-bottom: 2px solid #f50808;
+  border-left: 2px solid #f50808;
   line-height: min-content;
 `
 const ContainerTypeCR = styled.div`
