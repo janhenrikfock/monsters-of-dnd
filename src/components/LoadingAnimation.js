@@ -16,12 +16,6 @@ const LoaderContainer = styled.div`
   top: 0;
   left: 0;
 `
-const Image = styled.img`
-  top: 30%;
-  left: 40%;
-  z-index: 100;
-  position: absolute;
-`
 const Loading = styled.p`
   font-size: 40px;
   top: 30%;

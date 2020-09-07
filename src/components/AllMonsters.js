@@ -7,7 +7,7 @@ import LoadingAnimation from './LoadingAnimation'
 export default function AllMonsters() {
   const [monsterDetails, setMonsterDetails] = useState([])
 
-  const [loading, setLoading] = useState()
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const locallyLoadedMonsterNames = JSON.parse(
@@ -28,27 +28,31 @@ export default function AllMonsters() {
               })
           })
         })
+        .then(setLoading(false))
         .catch((err) => console.log(err))
     }
   }, [])
 
   if (monsterDetails.length !== 0) {
     saveLocally('monsterdetails', monsterDetails)
-    setLoading(false)
   } else if (localStorage.getItem('monsterdetails')) {
     setMonsterDetails(JSON.parse(localStorage.getItem('monsterdetails')))
   }
-  return loading ? (
-    <LoadingAnimation />
-  ) : (
-    <>
-      <HeadlineStyled>Monsters of DnD</HeadlineStyled>
-      {monsterDetails.map((monster, index) => (
-        <OneMonsterItem key={index} monster={monster}></OneMonsterItem>
-      ))}
-    </>
-  )
+
+  if (loading) {
+    return <LoadingAnimation />
+  } else {
+    return (
+      <>
+        <HeadlineStyled>Monsters of DnD</HeadlineStyled>
+        {monsterDetails.map((monster, index) => (
+          <OneMonsterItem key={index} monster={monster}></OneMonsterItem>
+        ))}
+      </>
+    )
+  }
 }
+
 const HeadlineStyled = styled.h1`
   font-size: 150%;
   text-align: center;
