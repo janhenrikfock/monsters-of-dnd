@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components/macro'
 import saveLocally from './lib/saveLocally'
 import OneMonsterItem from './OneMonsterItem'
+import LoadingAnimation from './LoadingAnimation'
 
 export default function AllMonsters() {
   const [monsterDetails, setMonsterDetails] = useState([])
+
+  const [loading, setLoading] = useState()
 
   useEffect(() => {
     const locallyLoadedMonsterNames = JSON.parse(
@@ -12,6 +15,7 @@ export default function AllMonsters() {
     )
 
     if (!locallyLoadedMonsterNames || locallyLoadedMonsterNames.length === 0) {
+      setLoading(true)
       fetch(`https://www.dnd5eapi.co/api/monsters`)
         .then((res) => res.json())
         .then((data) => {
@@ -30,10 +34,13 @@ export default function AllMonsters() {
 
   if (monsterDetails.length !== 0) {
     saveLocally('monsterdetails', monsterDetails)
+    setLoading(false)
   } else if (localStorage.getItem('monsterdetails')) {
     setMonsterDetails(JSON.parse(localStorage.getItem('monsterdetails')))
   }
-  return (
+  return loading ? (
+    <LoadingAnimation />
+  ) : (
     <>
       <HeadlineStyled>Monsters of DnD</HeadlineStyled>
       {monsterDetails.map((monster, index) => (
