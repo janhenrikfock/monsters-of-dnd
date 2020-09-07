@@ -26,9 +26,9 @@ export default function AllMonsters() {
               .then((data) => {
                 setMonsterDetails((monsterDetails) => [...monsterDetails, data])
               })
+              .then(setLoading(false))
           })
         })
-        .then(setLoading(false))
         .catch((err) => console.log(err))
     }
   }, [])
@@ -45,8 +45,8 @@ export default function AllMonsters() {
     return (
       <>
         <HeadlineStyled>Monsters of DnD</HeadlineStyled>
-        {monsterDetails.map((monster, index) => (
-          <OneMonsterItem key={index} monster={monster}></OneMonsterItem>
+        {monsterDetails.map((monster) => (
+          <OneMonsterItem key={monster.id} monster={monster}></OneMonsterItem>
         ))}
       </>
     )
