@@ -5,7 +5,7 @@ import LoadingAnimation from './LoadingAnimation'
 
 describe('LoadingAnimation', () => {
   it('displays loadingspinner gif', () => {
-    const { getByAltText } = render(<LoadingAnimation alt={'loading'} />)
+    const { getByAltText } = render(<LoadingAnimation alt="loading" />)
 
     expect(getByAltText('loading')).toBeInTheDocument()
   })
