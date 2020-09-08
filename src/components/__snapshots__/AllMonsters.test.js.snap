@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AllMonsters displays the headline, followed by the first listitem which is aboleth 1`] = `"Monsters of DnD"`;
+
+exports[`AllMonsters displays the headline, followed by the first listitem which is aboleth 2`] = `"Aboleth"`;
+
+exports[`AllMonsters renders correctly 1`] = `
+<h1
+  className="AllMonsters__HeadlineStyled-sc-1uiuvl1-0 iFooKo"
+>
+  Monsters of DnD
+</h1>
+`;
