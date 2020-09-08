@@ -7,4 +7,4 @@ export default {
   component: LoadingAnimation,
 }
 
-export const LoadingAnimation = <img src={loadingspinner} alt="loading" />
+export const Loading = <img src={loadingspinner} alt="loading" />
