@@ -10,7 +10,6 @@ export default function AllMonsters() {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    localStorage.clear()
     const locallyLoadedMonsterNames = JSON.parse(
       localStorage.getItem('monsternames')
     )
