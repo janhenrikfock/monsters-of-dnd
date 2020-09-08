@@ -1,9 +1,9 @@
 import React from 'react'
-import AllMonstersList from './AllMonstersList'
+import AllMonsters from './AllMonsters'
 
 export default {
-  title: 'Example/AllMonstersList',
-  component: AllMonstersList,
+  title: 'Example/AllMonsters',
+  component: AllMonsters,
 }
 
-export const FullList = <AllMonstersList />
+export const FullList = <AllMonsters />
