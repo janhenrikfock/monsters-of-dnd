@@ -1,15 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export default function OneMonsterItem({ monster }) {
   return (
-    <ContainerStyled>
-      <MonsterNameStyled>{monster.name}</MonsterNameStyled>
-      <ContainerTypeCR>
-        <ParagraphType>{monster.type}</ParagraphType>
-        <ParagraphCR>{monster.challenge_rating}</ParagraphCR>
-      </ContainerTypeCR>
-    </ContainerStyled>
+    <Link to={'/monster/' + monster.index}>
+      <ContainerStyled>
+        <MonsterNameStyled>{monster.name}</MonsterNameStyled>
+        <ContainerTypeCR>
+          <ParagraphType>{monster.type}</ParagraphType>
+          <ParagraphCR>{monster.challenge_rating}</ParagraphCR>
+        </ContainerTypeCR>
+      </ContainerStyled>
+    </Link>
   )
 }
 const ContainerStyled = styled.div`
