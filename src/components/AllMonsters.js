@@ -11,7 +11,10 @@ export default function AllMonsters({ loading, monsterDetails }) {
       <>
         <HeadlineStyled>Monsters of DnD</HeadlineStyled>
         {monsterDetails.map((monster) => (
-          <OneMonsterItem key={monster.id} monster={monster}></OneMonsterItem>
+          <OneMonsterItem
+            key={monster.index}
+            monster={monster}
+          ></OneMonsterItem>
         ))}
       </>
     )

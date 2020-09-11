@@ -1,22 +1,34 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { MemoryRouter as Router } from 'react-router-dom'
 import renderer from 'react-test-renderer'
+import { render } from '@testing-library/react'
 
 import AllMonsters from './AllMonsters'
 
 describe('AllMonsters', () => {
-  const headline = 'Monsters of DnD'
-  const monsterListItem = 'Aboleth'
+  const monsterDetails = [
+    {
+      name: 'Monstername',
+      type: 'type',
+      challenge_rating: '00',
+      index: 'monstername',
+    },
+  ]
 
-  it('displays the headline, followed by the first listitem which is aboleth', () => {
-    render(<AllMonsters headline={headline} listitems={monsterListItem} />)
-
-    expect(headline).toMatchSnapshot()
-    expect(monsterListItem).toMatchSnapshot()
+  it('shows headline Monsters of DnD', () => {
+    const { getByText } = render(
+      <Router>
+        <AllMonsters monsterDetails={monsterDetails} />
+      </Router>
+    )
+    expect(getByText('Monsters of DnD')).toBeInTheDocument()
   })
-  it('renders correctly', () => {
+
+  it('renders OneMonsterItem correctly', () => {
     const list = renderer.create(
-      <AllMonsters headline={headline} listitem={monsterListItem} />
+      <Router>
+        <AllMonsters monsterDetails={monsterDetails} />
+      </Router>
     )
     expect(list).toMatchSnapshot()
   })
