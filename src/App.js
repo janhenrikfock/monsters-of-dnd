@@ -18,11 +18,15 @@ function App() {
       localStorage.getItem('monsterdetails')
     )
 
-
-    if (!locallyLoadedMonsterNames || locallyLoadedMonsterNames.length === 0) {
+    if (
+      !locallyLoadedMonsterNames ||
+      locallyLoadedMonsterNames.length === 0 ||
+      locallyLoadedMonsterNames.length !== locallyLoadedMonsterDetails.length
+    ) {
       setLoading(true)
       fetch(`https://www.dnd5eapi.co/api/monsters`)
         .then((res) => res.json())
+        .then(localStorage.clear())
         .then((data) => {
           saveLocally('monsternames', data.results)
           data.results.forEach((monster) => {
