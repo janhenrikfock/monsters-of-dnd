@@ -1,5 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
+import { MemoryRouter as Router } from 'react-router-dom'
 
 import OneMonsterItem from './OneMonsterItem'
 
@@ -11,7 +12,11 @@ describe('OneMonsterItem', () => {
   }
 
   it('displays monsterinformation', () => {
-    const { getByText } = render(<OneMonsterItem monster={monster} />)
+    const { getByText } = render(
+      <Router>
+        <OneMonsterItem monster={monster} />
+      </Router>
+    )
 
     expect(getByText(monster.name)).toBeInTheDocument()
   })
