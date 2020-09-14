@@ -19,4 +19,8 @@ body {
     --highlightbrown: #B87828;
 
 }
+
+p {
+    margin: 0;
+}
 `

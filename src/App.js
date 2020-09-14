@@ -45,8 +45,8 @@ function App() {
         <AllMonsters loading={loading} monsterDetails={monsterDetails} />
       </Route>
       {monsterDetails.map((monster) => (
-        <Route path={'/monster/' + monster.index}>
-          <MonsterDetails monster={monster} />
+        <Route key={monster.index} path={'/monster/' + monster.index}>
+          <MonsterDetails key={monster.index} monster={monster} />
         </Route>
       ))}
     </Switch>
