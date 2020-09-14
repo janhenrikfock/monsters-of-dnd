@@ -14,6 +14,11 @@ function App() {
       localStorage.getItem('monsternames')
     )
 
+    const locallyLoadedMonsterDetails = JSON.parse(
+      localStorage.getItem('monsterdetails')
+    )
+
+
     if (!locallyLoadedMonsterNames || locallyLoadedMonsterNames.length === 0) {
       setLoading(true)
       fetch(`https://www.dnd5eapi.co/api/monsters`)
