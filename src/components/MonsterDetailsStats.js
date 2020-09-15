@@ -66,7 +66,6 @@ const Stat = styled.p`
   margin: 0;
   font-size: 30px;
   display: inline-block;
-
   text-align: center;
 `
 const Modifier = styled.p`

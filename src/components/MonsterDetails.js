@@ -1,11 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
+import GeneralData from './GeneralData'
 import MonsterDetailsStat from './MonsterDetailsStats'
 
 export default function MonsterDetails({ monster }) {
   return (
     <>
       <Headline>{monster.name}</Headline>
+      <GeneralData
+        type={monster.type}
+        cr={monster.challenge_rating}
+        size={monster.size}
+        alignment={monster.alignment}
+      />
       <MonsterDetailsStat
         strength={monster.strength}
         dexterity={monster.dexterity}
@@ -13,7 +20,7 @@ export default function MonsterDetails({ monster }) {
         intelligence={monster.intelligence}
         wisdom={monster.wisdom}
         charisma={monster.charisma}
-      ></MonsterDetailsStat>
+      />
     </>
   )
 }
