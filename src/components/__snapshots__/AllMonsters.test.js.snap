@@ -3,7 +3,7 @@
 exports[`AllMonsters renders OneMonsterItem correctly 1`] = `
 Array [
   <h1
-    className="AllMonsters__HeadlineStyled-sc-1uiuvl1-0 gvNaaB"
+    className="AllMonsters__HeadlineStyled-sc-1uiuvl1-0 bjKuoR"
   >
     Monsters of DnD
   </h1>,
@@ -22,12 +22,12 @@ Array [
         className="sc-AxhCb ZaNiK"
       >
         <p
-          className="sc-AxhUy lmzmNk"
+          className="sc-AxhUy cLsmCN"
         >
           type
         </p>
         <p
-          className="sc-AxgMl fMxjYK"
+          className="sc-AxgMl bnYzSD"
         >
           CR: 
           00

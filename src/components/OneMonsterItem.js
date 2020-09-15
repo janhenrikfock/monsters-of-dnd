@@ -49,7 +49,7 @@ const ContainerTypeCR = styled.div`
 `
 const ParagraphType = styled.p`
   text-transform: capitalize;
-  font-size: 80%;
+  font-size: 15px;
   flex: 1 1;
   margin: 0;
   padding-left: 2px;
@@ -57,7 +57,7 @@ const ParagraphType = styled.p`
   border-left: 2px solid #ffffff;
 `
 const ParagraphCR = styled.p`
-  font-size: 80%;
+  font-size: 15px;
   flex: 1 1;
   margin: 0;
   text-align: right;

@@ -50,13 +50,14 @@ const AllStats = styled.div`
   flex: 1 1 auto;
   justify-content: space-evenly;
   margin-top: 20px;
+  border-bottom: 1px solid #a5a5a3;
+  border-top: 1px solid #a5a5a3;
 `
 const OneStatContainer = styled.div`
   min-width: 52px;
   display: flex;
   flex-direction: column;
   padding: 8px;
-  border: 1px solid #a5a5a3;
 `
 const StatName = styled.p`
   color: black;

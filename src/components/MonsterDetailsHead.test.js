@@ -6,7 +6,7 @@ describe('MonsterDetailsHead', () => {
   const monster = {
     type: 'type',
     name: 'Name',
-    challenge_rating: 10,
+
     size: 'size',
     alignment: 'alignment',
   }
@@ -16,17 +16,14 @@ describe('MonsterDetailsHead', () => {
       <MonsterDetailsHead
         name={monster.name}
         type={monster.type}
-        cr={monster.challenge_rating}
         size={monster.size}
         alignment={monster.alignment}
       />
     )
 
     expect(getByText(monster.name)).toBeInTheDocument()
-    expect(getByText(monster.size + ' ' + monster.type)).toBeInTheDocument()
     expect(
-      getByText('CR: ' + monster.challenge_rating.toString())
+      getByText(monster.size + ' ' + monster.type + ', ' + monster.alignment)
     ).toBeInTheDocument()
-    expect(getByText('Alignment: ' + monster.alignment)).toBeInTheDocument()
   })
 })

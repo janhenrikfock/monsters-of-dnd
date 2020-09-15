@@ -27,4 +27,5 @@ const HeadlineStyled = styled.h1`
   text-align: center;
   border-bottom: 3px solid crimson;
   font-family: serif;
+  padding-bottom: 13px;
 `
