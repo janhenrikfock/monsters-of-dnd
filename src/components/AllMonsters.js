@@ -22,7 +22,9 @@ export default function AllMonsters({ loading, monsterDetails }) {
 }
 
 const HeadlineStyled = styled.h1`
+  color: black;
   font-size: 150%;
   text-align: center;
-  border-bottom: 8px solid #f50808;
+  border-bottom: 3px solid crimson;
+  font-family: serif;
 `

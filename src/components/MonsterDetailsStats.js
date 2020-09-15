@@ -49,6 +49,7 @@ const AllStats = styled.div`
   display: flex;
   flex: 1 1 auto;
   justify-content: space-evenly;
+  margin-top: 20px;
 `
 const OneStatContainer = styled.div`
   min-width: 52px;
@@ -58,9 +59,10 @@ const OneStatContainer = styled.div`
   border: 1px solid #a5a5a3;
 `
 const StatName = styled.p`
+  color: black;
   font-size: 16px;
   text-align: center;
-  border-bottom: 2px solid #f50808;
+  border-bottom: 2px solid crimson;
 `
 const Stat = styled.p`
   margin: 0;

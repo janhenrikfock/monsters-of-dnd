@@ -1,42 +1,46 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
+import listlogo from './images/list.png'
 
 export default function OneMonsterItem({ monster }) {
   return (
-    <NavLink to={'/monster/' + monster.index}>
+    <ComponentContainer>
       <ContainerStyled>
         <MonsterNameStyled>{monster.name}</MonsterNameStyled>
         <ContainerTypeCR>
           <ParagraphType>{monster.type}</ParagraphType>
-          <ParagraphCR>{monster.challenge_rating}</ParagraphCR>
+          <ParagraphCR>CR: {monster.challenge_rating}</ParagraphCR>
         </ContainerTypeCR>
       </ContainerStyled>
-    </NavLink>
+      <NavLink to={'/monster/' + monster.index}>
+        <DetailLink src={listlogo} alt="view details" />
+      </NavLink>
+    </ComponentContainer>
   )
 }
+const ComponentContainer = styled.div`
+  display: flex;
+  padding: 2px;
+  align-items: center;
+`
+
 const ContainerStyled = styled.div`
-  width: 80%;
-  border-radius: 10px;
-  margin: 10px 10%;
+  width: 100%;
+  margin: 4px 0;
   padding: 10px;
   display: inline-block;
   text-decoration: none;
-  box-shadow: 0 2px 6px black;
   color: var(--textblack);
-  background: linear-gradient(
-    170deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(234, 235, 238, 1) 100%
-  );
+  border-bottom: 1px solid #d0d0cd;
 `
 const MonsterNameStyled = styled.h2`
-  font-size: 80%;
-  font-weight: 1000;
+  color: #262626;
+  font-size: 100%;
   text-align: left;
   margin: 0 0 7px 0;
   vertical-align: text-bottom;
-  text-decoration: underline 2px #f50808;
+  font-family: serif;
   line-height: min-content;
   padding-left: 2px;
 `
@@ -58,4 +62,17 @@ const ParagraphCR = styled.p`
   margin: 0;
   text-align: right;
   text-decoration: none;
+`
+const DetailLink = styled.img`
+  max-height: 50px;
+  max-width: 50px;
+  background: linear-gradient(
+    155deg,
+    rgba(249, 247, 247, 1) 0%,
+    rgba(220, 20, 60, 1) 60%
+  );
+  border-radius: 6px;
+  padding: 10px;
+  margin: 5px 10px;
+  color: white;
 `

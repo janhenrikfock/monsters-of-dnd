@@ -3,37 +3,48 @@
 exports[`AllMonsters renders OneMonsterItem correctly 1`] = `
 Array [
   <h1
-    className="AllMonsters__HeadlineStyled-sc-1uiuvl1-0 iFooKo"
+    className="AllMonsters__HeadlineStyled-sc-1uiuvl1-0 gvNaaB"
   >
     Monsters of DnD
   </h1>,
-  <a
-    href="/monster/monstername"
-    onClick={[Function]}
+  <div
+    className="sc-AxjAm kdOkKT"
   >
     <div
-      className="sc-AxjAm bJwxCz"
+      className="sc-AxirZ zJNrh"
     >
       <h2
-        className="sc-AxirZ LmuKL"
+        className="sc-AxiKw iKIKrz"
       >
         Monstername
       </h2>
       <div
-        className="sc-AxiKw jmqPVm"
+        className="sc-AxhCb ZaNiK"
       >
         <p
-          className="sc-AxhCb lozTuO"
+          className="sc-AxhUy lmzmNk"
         >
           type
         </p>
         <p
-          className="sc-AxhUy gMQjRs"
+          className="sc-AxgMl fMxjYK"
         >
+          CR: 
           00
         </p>
       </div>
     </div>
-  </a>,
+    <a
+      aria-current={null}
+      href="/monster/monstername"
+      onClick={[Function]}
+    >
+      <img
+        alt="view details"
+        className="sc-AxheI hJAYtv"
+        src="list.png"
+      />
+    </a>
+  </div>,
 ]
 `;

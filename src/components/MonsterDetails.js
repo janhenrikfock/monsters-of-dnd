@@ -1,13 +1,12 @@
 import React from 'react'
-import styled from 'styled-components'
-import GeneralData from './GeneralData'
+import MonsterDetailsHead from './MonsterDetailsHead'
 import MonsterDetailsStat from './MonsterDetailsStats'
 
 export default function MonsterDetails({ monster }) {
   return (
     <>
-      <Headline>{monster.name}</Headline>
-      <GeneralData
+      <MonsterDetailsHead
+        name={monster.name}
         type={monster.type}
         cr={monster.challenge_rating}
         size={monster.size}
@@ -24,11 +23,3 @@ export default function MonsterDetails({ monster }) {
     </>
   )
 }
-
-const Headline = styled.h1`
-  font-size: 150%;
-  text-align: center;
-  border-bottom: 8px solid #f50808;
-  width: 100%;
-  min-height: 50px;
-`
