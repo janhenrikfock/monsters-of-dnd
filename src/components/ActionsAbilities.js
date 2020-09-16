@@ -18,7 +18,6 @@ export default function ActionsAbilities({ headline, dataArray }) {
 const Container = styled.div`
   padding: 3px;
 `
-
 const Headline = styled.h2`
   margin: 5px;
   font-size: 100%;
