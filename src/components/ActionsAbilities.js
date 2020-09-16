@@ -6,7 +6,7 @@ export default function ActionsAbilities({ headline, dataArray }) {
   return (
     <>
       <Headline>{headline}</Headline>
-      {dataArray.map((object) => (
+      {dataArray?.map((object) => (
         <Container key={uuidv4()}>
           <Name>{object.name}</Name>
           <Desc>{object.desc}</Desc>
