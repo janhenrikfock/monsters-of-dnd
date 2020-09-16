@@ -33,7 +33,7 @@ describe('MonsterDetails', () => {
         url: 'url/as/a/string',
       },
       {
-        index: 'saving-throw-string',
+        index: 'saving-throw-string2',
         name: 'Savingthrow or proficiency',
         value: 0,
         url: 'url/as/a/string',

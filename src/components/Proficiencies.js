@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 export default function Proficiencies({ proficiencies }) {
   return (
@@ -8,7 +8,7 @@ export default function Proficiencies({ proficiencies }) {
       {proficiencies.map((proficiency) => (
         <div key={proficiency.index}>
           <ListItemProficency>
-            {proficiency.name} +{proficiency.value}
+            {proficiency.name} + {proficiency.value}
           </ListItemProficency>
         </div>
       ))}

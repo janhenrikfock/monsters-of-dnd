@@ -24,7 +24,7 @@ export default function MonsterDetails({ monster }) {
       />
       <Proficiencies proficiencies={monster.proficiencies} />
       <ActionsAbilities
-        headline={'Special Abilities'}
+        headline="Special Abilities"
         dataArray={monster.special_abilities}
       />
       <ActionsAbilities headline={'Actions'} dataArray={monster.actions} />
