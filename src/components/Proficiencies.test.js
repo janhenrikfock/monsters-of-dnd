@@ -18,7 +18,7 @@ describe('Proficiencies', () => {
     },
   ]
   it('displays name and value as a li in a ul', () => {
-    const { getByText } = render(<Proficiencies proficiencie={proficiencies} />)
-    expect()
+    const { getByText } = render(<Proficiencies proficiency={proficiencies} />)
+    expect(getByText())
   })
 })
