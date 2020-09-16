@@ -2,6 +2,7 @@ import React from 'react'
 import MonsterDetailsHead from './MonsterDetailsHead'
 import MonsterDetailsStat from './MonsterDetailsStats'
 import Proficiencies from './Proficiencies'
+import ActionsAbilities from './ActionsAbilities'
 
 export default function MonsterDetails({ monster }) {
   return (
@@ -22,6 +23,11 @@ export default function MonsterDetails({ monster }) {
         charisma={monster.charisma}
       />
       <Proficiencies proficiencies={monster.proficiencies} />
+      <ActionsAbilities
+        headline={'Special Abilities'}
+        dataArray={monster.special_abilities}
+      />
+      <ActionsAbilities headline={'Actions'} dataArray={monster.actions} />
     </>
   )
 }

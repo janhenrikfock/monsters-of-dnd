@@ -6,12 +6,11 @@ describe('MonsterDetailsHead', () => {
   const monster = {
     type: 'type',
     name: 'Name',
-
     size: 'size',
     alignment: 'alignment',
   }
 
-  it.only('displays name, type, size and cr as headline', () => {
+  it('displays name, type, size and cr as headline', () => {
     const { getByText } = render(
       <MonsterDetailsHead
         name={monster.name}

@@ -6,11 +6,11 @@ export default function Proficiencies({ proficiencies }) {
     <>
       <Headline>Proficiencies and Skills</Headline>
       {proficiencies.map((proficiency) => (
-        <ProficiencyList key={proficiency.index}>
+        <div key={proficiency.index}>
           <ListItemProficency>
             {proficiency.name} +{proficiency.value}
           </ListItemProficency>
-        </ProficiencyList>
+        </div>
       ))}
     </>
   )
@@ -20,11 +20,9 @@ const Headline = styled.h2`
   font-size: 100%;
   font-family: serif;
   color: black;
-  text-decoration: underline 2px solid crimson;
 `
-const ProficiencyList = styled.ul`
-  margin: 2px;
-`
-const ListItemProficency = styled.li`
-  font-size: 15px;
+
+const ListItemProficency = styled.p`
+  line-height: 24px;
+  padding-left: 15px;
 `
