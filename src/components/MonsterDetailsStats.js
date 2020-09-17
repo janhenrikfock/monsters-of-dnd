@@ -50,7 +50,6 @@ const AllStats = styled.div`
   flex: 1 1 auto;
   justify-content: space-evenly;
   margin-top: 20px;
-  border-bottom: 1px solid #a5a5a3;
   border-top: 1px solid #a5a5a3;
 `
 const OneStatContainer = styled.div`
@@ -64,7 +63,6 @@ const StatName = styled.p`
   font-size: 16px;
   text-align: center;
   border-bottom: 2px solid var(--highlightcolor);
-
 `
 const Stat = styled.p`
   margin: 0;

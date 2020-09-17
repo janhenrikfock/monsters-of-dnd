@@ -6,15 +6,12 @@ import listlogo from './images/list.png'
 export default function OneMonsterItem({ monster }) {
   return (
     <ComponentContainer>
-
       <Container>
-
         <MonsterNameStyled>{monster.name}</MonsterNameStyled>
         <ContainerTypeCR>
           <ParagraphType>{monster.type}</ParagraphType>
           <ParagraphCR>CR: {monster.challenge_rating}</ParagraphCR>
         </ContainerTypeCR>
-
       </Container>
 
       <NavLink to={'/monster/' + monster.index}>
@@ -29,9 +26,7 @@ const ComponentContainer = styled.div`
   align-items: center;
 `
 
-
 const Container = styled.div`
-
   width: 100%;
   margin: 4px 0;
   padding: 10px;
@@ -41,14 +36,14 @@ const Container = styled.div`
   border-bottom: 1px solid #d0d0cd;
 `
 const MonsterNameStyled = styled.h2`
+  margin: 0 0 7px 0;
+  padding-left: 2px;
   color: #262626;
   font-size: 100%;
   text-align: left;
-  margin: 0 0 7px 0;
   vertical-align: text-bottom;
   font-family: serif;
   line-height: min-content;
-  padding-left: 2px;
 `
 const ContainerTypeCR = styled.div`
   display: flex;
@@ -72,9 +67,7 @@ const ParagraphCR = styled.p`
 const DetailLink = styled.img`
   max-height: 50px;
   max-width: 50px;
-  /* background: lightgrey; */
   border: 2px solid var(--highlightcolor);
-
   border-radius: 6px;
   padding: 10px;
   margin: 5px 10px;

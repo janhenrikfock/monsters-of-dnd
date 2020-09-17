@@ -22,8 +22,8 @@ body {
 }
 
 h2 {
-    margin: 5px;
-  font-size: 100%;
+padding: 10px;
+  font-size: 22px;
   font-family: serif;
   color: black;
 }
@@ -31,6 +31,4 @@ h2 {
 p {
     margin: 0;
 }
-
-
 `

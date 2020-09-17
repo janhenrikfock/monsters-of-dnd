@@ -7,7 +7,7 @@ export default function Proficiencies({ proficiencies }) {
   } else {
     return (
       <>
-        <h2>Proficiencies and Skills</h2>
+        <ComponentHeadline>Proficiencies and Skills</ComponentHeadline>
         {proficiencies.map((proficiency) => (
           <div key={proficiency.index}>
             <ListItemProficency>
@@ -23,4 +23,7 @@ export default function Proficiencies({ proficiencies }) {
 const ListItemProficency = styled.p`
   line-height: 24px;
   padding-left: 15px;
+`
+const ComponentHeadline = styled.h2`
+  border-top: 1px solid #a5a5a3;
 `
