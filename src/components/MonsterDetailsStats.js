@@ -63,7 +63,8 @@ const StatName = styled.p`
   color: black;
   font-size: 16px;
   text-align: center;
-  border-bottom: 2px solid crimson;
+  border-bottom: 2px solid var(--highlightcolor);
+
 `
 const Stat = styled.p`
   margin: 0;
