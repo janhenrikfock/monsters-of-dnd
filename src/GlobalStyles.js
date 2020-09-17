@@ -14,7 +14,9 @@ body {
 :root {
     --backgroundbeige: #FEFDF9;
     --highlightred: #f50808;
+
     --highlightcolor: #e4b363;
+
     --textblack: #61615F;
     --shadowgrey: #A5A5A3;
     --highlightbrown: #B87828;

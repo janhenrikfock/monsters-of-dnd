@@ -21,6 +21,7 @@ export default function AllMonsters({ loading, monsterDetails }) {
   }
 }
 
+
 const Headline = styled.h1`
   color: black;
   font-size: 150%;
