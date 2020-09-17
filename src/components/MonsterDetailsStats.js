@@ -49,24 +49,26 @@ const AllStats = styled.div`
   display: flex;
   flex: 1 1 auto;
   justify-content: space-evenly;
+  margin-top: 20px;
+  border-bottom: 1px solid #a5a5a3;
+  border-top: 1px solid #a5a5a3;
 `
 const OneStatContainer = styled.div`
   min-width: 52px;
   display: flex;
   flex-direction: column;
   padding: 8px;
-  border: 1px solid #a5a5a3;
 `
 const StatName = styled.p`
+  color: black;
   font-size: 16px;
   text-align: center;
-  border-bottom: 2px solid #f50808;
+  border-bottom: 2px solid crimson;
 `
 const Stat = styled.p`
   margin: 0;
   font-size: 30px;
   display: inline-block;
-
   text-align: center;
 `
 const Modifier = styled.p`

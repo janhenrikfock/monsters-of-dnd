@@ -23,10 +23,10 @@ function App() {
       locallyLoadedMonsterNames.length === 0 ||
       locallyLoadedMonsterNames.length !== locallyLoadedMonsterDetails.length
     ) {
+      localStorage.clear()
       setLoading(true)
       fetch(`https://www.dnd5eapi.co/api/monsters`)
         .then((res) => res.json())
-        .then(localStorage.clear())
         .then((data) => {
           saveLocally('monsternames', data.results)
           data.results.forEach((monster) => {

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components/macro'
 
 export default createGlobalStyle`
 * {
@@ -13,7 +13,7 @@ body {
 
 :root {
     --backgroundbeige: #FEFDF9;
-    --highlightred: #A33901;
+    --highlightred: #f50808;
     --textblack: #61615F;
     --shadowgrey: #A5A5A3;
     --highlightbrown: #B87828;
@@ -23,4 +23,6 @@ body {
 p {
     margin: 0;
 }
+
+
 `

@@ -1,11 +1,19 @@
 import React from 'react'
-import styled from 'styled-components'
+import MonsterDetailsHead from './MonsterDetailsHead'
 import MonsterDetailsStat from './MonsterDetailsStats'
+import Proficiencies from './Proficiencies'
+import ActionsAbilities from './ActionsAbilities'
 
 export default function MonsterDetails({ monster }) {
   return (
     <>
-      <Headline>{monster.name}</Headline>
+      <MonsterDetailsHead
+        name={monster.name}
+        type={monster.type}
+        cr={monster.challenge_rating}
+        size={monster.size}
+        alignment={monster.alignment}
+      />
       <MonsterDetailsStat
         strength={monster.strength}
         dexterity={monster.dexterity}
@@ -13,15 +21,13 @@ export default function MonsterDetails({ monster }) {
         intelligence={monster.intelligence}
         wisdom={monster.wisdom}
         charisma={monster.charisma}
-      ></MonsterDetailsStat>
+      />
+      <Proficiencies proficiencies={monster.proficiencies} />
+      <ActionsAbilities
+        headline="Special Abilities"
+        dataArray={monster.special_abilities}
+      />
+      <ActionsAbilities headline={'Actions'} dataArray={monster.actions} />
     </>
   )
 }
-
-const Headline = styled.h1`
-  font-size: 150%;
-  text-align: center;
-  border-bottom: 8px solid #f50808;
-  width: 100%;
-  min-height: 50px;
-`

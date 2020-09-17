@@ -3,7 +3,7 @@ import React from 'react'
 import MonsterDetailsStats from './MonsterDetailsStats'
 
 export default {
-  title: 'Details/Statblock ',
+  title: 'Detailspage/Statblock ',
   component: MonsterDetailsStats,
 }
 
