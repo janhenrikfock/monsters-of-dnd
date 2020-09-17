@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import MonsterDetailsHead from './MonsterDetailsHead'
 import MonsterDetailsStat from './MonsterDetailsStats'
 import Proficiencies from './Proficiencies'
 import ActionsAbilities from './ActionsAbilities'
 
 export default function MonsterDetails({ monster }) {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <>
       <MonsterDetailsHead

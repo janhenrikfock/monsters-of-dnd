@@ -14,13 +14,18 @@ body {
 :root {
     --backgroundbeige: #FEFDF9;
     --highlightred: #f50808;
-
-    --highlightcolor: #e4b363;
-
+    --highlightcolor: #E1B202;
     --textblack: #61615F;
     --shadowgrey: #A5A5A3;
     --highlightbrown: #B87828;
 
+}
+
+h2 {
+    margin: 5px;
+  font-size: 100%;
+  font-family: serif;
+  color: black;
 }
 
 p {
