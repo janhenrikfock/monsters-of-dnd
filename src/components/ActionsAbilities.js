@@ -8,7 +8,7 @@ export default function ActionsAbilities({ headline, dataArray }) {
   } else {
     return (
       <>
-        <h2>{headline}</h2>
+        <ComponentHeadline>{headline}</ComponentHeadline>
         {dataArray?.map((object) => (
           <Container key={uuidv4()}>
             <Name>{object.name}</Name>
@@ -30,6 +30,9 @@ const Name = styled.h3`
   color: black;
   font-weight: bold;
   margin: 0;
+`
+const ComponentHeadline = styled.h2`
+  border-top: 1px solid #a5a5a3;
 `
 const Desc = styled.p`
   padding: 10px;

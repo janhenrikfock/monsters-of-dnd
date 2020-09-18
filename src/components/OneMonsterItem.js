@@ -35,14 +35,14 @@ const Container = styled.div`
   border-bottom: 1px solid #d0d0cd;
 `
 const MonsterNameStyled = styled.h2`
+  margin: 0 0 7px 0;
+  padding-left: 2px;
   color: #262626;
   font-size: 100%;
   text-align: left;
-  margin: 0 0 7px 0;
   vertical-align: text-bottom;
   font-family: serif;
   line-height: min-content;
-  padding-left: 2px;
 `
 const ContainerTypeCR = styled.div`
   display: flex;
