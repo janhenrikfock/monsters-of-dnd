@@ -5,14 +5,17 @@ import OneMonsterItem from './OneMonsterItem'
 import Fuse from 'fuse.js'
 
 export default function AllMonsters({ loading, monsterDetails }) {
-  console.log(monsterDetails)
   const [searchResults, setSearchResults] = useState('')
 
   const fuse = new Fuse(monsterDetails, {
     keys: ['name', 'type', 'challenge_rating'],
   })
-  const results = fuse.search('elemental')
+  const results = fuse.search(searchResults)
   console.log(results)
+  function handleInput({ currentTarget = {} }) {
+    const { value } = currentTarget
+    setSearchResults(value)
+  }
 
   if (loading) {
     return <LoadingAnimation />
@@ -25,11 +28,11 @@ export default function AllMonsters({ loading, monsterDetails }) {
           <input
             type="text"
             value={searchResults}
-            // onChange={handleSearch}
+            onChange={handleInput}
           ></input>
         </form>
 
-        {monsterDetails.map((monster) => (
+        {results.map((monster) => (
           <OneMonsterItem
             key={monster.index}
             monster={monster}
