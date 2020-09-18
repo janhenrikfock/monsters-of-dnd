@@ -10,8 +10,8 @@ export default function AllMonsters({ loading, monsterDetails }) {
   const fuse = new Fuse(monsterDetails, {
     keys: ['name', 'type', 'challenge_rating'],
   })
-  const results = fuse.search(searchResults)
-  console.log(results)
+  const results = searchResults ? fuse.search(searchResults) : monsterDetails
+
   function handleInput({ currentTarget = {} }) {
     const { value } = currentTarget
     setSearchResults(value)
