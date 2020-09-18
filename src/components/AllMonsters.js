@@ -23,14 +23,13 @@ export default function AllMonsters({ loading, monsterDetails }) {
     return (
       <>
         <Headline>Monsters of DnD</Headline>
-        <form>
-          <label>Search</label>
-          <input
-            type="text"
-            value={searchResults}
-            onChange={handleInput}
-          ></input>
-        </form>
+
+        <Input
+          type="text"
+          value={searchResults}
+          onChange={handleInput}
+          placeholder={'Search for Monster'}
+        ></Input>
 
         {results.map((monster) => (
           <OneMonsterItem
@@ -42,7 +41,6 @@ export default function AllMonsters({ loading, monsterDetails }) {
     )
   }
 }
-
 const Headline = styled.h1`
   color: black;
   font-size: 150%;
@@ -50,4 +48,12 @@ const Headline = styled.h1`
   border-bottom: 3px solid var(--highlightcolor);
   font-family: serif;
   padding-bottom: 13px;
+`
+const Input = styled.input`
+  width: 80%;
+  line-height: 26px;
+  margin-left: 10%;
+  display: block;
+  text-align: center;
+  font-size: 18px;
 `
