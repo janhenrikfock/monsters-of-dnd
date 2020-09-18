@@ -6,7 +6,6 @@ import MonsterDetails from './components/MonsterDetails'
 
 function App() {
   const [monsterDetails, setMonsterDetails] = useState([])
-
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
