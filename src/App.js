@@ -13,11 +13,9 @@ function App() {
     const locallyLoadedMonsterNames = JSON.parse(
       localStorage.getItem('monsternames')
     )
-
     const locallyLoadedMonsterDetails = JSON.parse(
       localStorage.getItem('monsterdetails')
     )
-
     if (
       !locallyLoadedMonsterNames ||
       locallyLoadedMonsterNames.length === 0 ||
