@@ -25,7 +25,6 @@ const ComponentContainer = styled.div`
   padding: 2px;
   align-items: center;
 `
-
 const Container = styled.div`
   width: 100%;
   margin: 4px 0;
