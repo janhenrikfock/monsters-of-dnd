@@ -12,25 +12,18 @@ export default function AllMonsters({ loading, monsterDetails }) {
   })
   const results = searchResults ? fuse.search(searchResults) : monsterDetails
 
-  function handleInput({ currentTarget = {} }) {
-    const { value } = currentTarget
-    setSearchResults(value)
-  }
-
   if (loading) {
     return <LoadingAnimation />
   } else {
     return (
       <>
         <Headline>Monsters of DnD</Headline>
-
         <Input
           type="text"
           value={searchResults}
           onChange={handleInput}
           placeholder={'Search for Monster'}
         ></Input>
-
         {results.map((monster) => (
           <OneMonsterItem
             key={monster.index}
@@ -39,6 +32,10 @@ export default function AllMonsters({ loading, monsterDetails }) {
         ))}
       </>
     )
+  }
+  function handleInput({ currentTarget = {} }) {
+    const { value } = currentTarget
+    setSearchResults(value)
   }
 }
 const Headline = styled.h1`
