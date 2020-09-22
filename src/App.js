@@ -4,7 +4,7 @@ import saveLocally from './components/lib/saveLocally'
 import AllMonsters from './pages/AllMonsters'
 import MonsterDetails from './pages/MonsterDetails'
 
-function App() {
+export default function App() {
   const [monsterDetails, setMonsterDetails] = useState([])
   const [loading, setLoading] = useState(false)
 
@@ -60,4 +60,3 @@ function App() {
     </Switch>
   )
 }
-export default App
