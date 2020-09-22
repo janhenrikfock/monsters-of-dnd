@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import calculateModifier from './lib/calculateModifier'
 
-export default function MonsterDetailsStats({
+export default function DetailsStats({
   strength,
   dexterity,
   constitution,

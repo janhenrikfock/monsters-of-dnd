@@ -1,13 +1,13 @@
 import React from 'react'
 
-import MonsterDetailsHead from './MonsterDetailsHead'
+import DetailsHead from './DetailsHead'
 
 export default {
   title: 'Detailspage/Head ',
-  component: MonsterDetailsHead,
+  component: DetailsHead,
 }
 
-const Template = (args) => <MonsterDetailsHead {...args} />
+const Template = (args) => <DetailsHead {...args} />
 
 export const DetailHead = Template.bind({})
 DetailHead.args = {

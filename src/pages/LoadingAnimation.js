@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import loadingspinner from './images/loadingspinner.gif'
+import loadingspinner from '../components/images/loadingspinner.gif'
 
 export default function LoadingAnimation() {
   return (
