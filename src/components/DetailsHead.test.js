@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import MonsterDetailsHead from './MonsterDetailsHead'
+import DetailsHead from './DetailsHead'
 
 describe('MonsterDetailsHead', () => {
   const monster = {
@@ -12,7 +12,7 @@ describe('MonsterDetailsHead', () => {
 
   it('displays name, type, size and cr as headline', () => {
     const { getByText } = render(
-      <MonsterDetailsHead
+      <DetailsHead
         name={monster.name}
         type={monster.type}
         size={monster.size}

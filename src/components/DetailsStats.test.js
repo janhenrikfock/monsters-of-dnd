@@ -1,8 +1,8 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import MonsterDetailsStats from './MonsterDetailsStats'
+import DetailsStats from './DetailsStats'
 
-describe('MonsterDetailsStats', () => {
+describe('DetailsStats', () => {
   const monster = {
     strength: 14,
     dexterity: 12,
@@ -14,7 +14,7 @@ describe('MonsterDetailsStats', () => {
 
   it.only('displays stats in the component', () => {
     const { getByText } = render(
-      <MonsterDetailsStats
+      <DetailsStats
         strength={monster.strength}
         dexterity={monster.dexterity}
         constitution={monster.constitution}

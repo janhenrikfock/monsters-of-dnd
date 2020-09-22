@@ -3,10 +3,17 @@
 exports[`AllMonsters renders OneMonsterItem correctly 1`] = `
 Array [
   <h1
-    className="AllMonsters__HeadlineStyled-sc-1uiuvl1-0 bjKuoR"
+    className="AllMonsters__Headline-sc-8qeyzf-0 kSodLq"
   >
     Monsters of DnD
   </h1>,
+  <input
+    className="AllMonsters__Input-sc-8qeyzf-1 dkMQrm"
+    onChange={[Function]}
+    placeholder="Search for Monster"
+    type="text"
+    value=""
+  />,
   <div
     className="sc-AxjAm kdOkKT"
   >
@@ -14,7 +21,7 @@ Array [
       className="sc-AxirZ zJNrh"
     >
       <h2
-        className="sc-AxiKw iKIKrz"
+        className="sc-AxiKw bMJRoL"
       >
         Monstername
       </h2>
@@ -41,7 +48,7 @@ Array [
     >
       <img
         alt="view details"
-        className="sc-AxheI hJAYtv"
+        className="sc-AxheI eKqwNu"
         src="list.png"
       />
     </a>

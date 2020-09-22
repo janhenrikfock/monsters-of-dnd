@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import LoadingAnimation from './LoadingAnimation'
-import OneMonsterItem from './OneMonsterItem'
+import OneMonsterItem from '../components/OneMonsterItem'
 import Fuse from 'fuse.js'
 
 export default function AllMonsters({ loading, monsterDetails }) {
@@ -11,6 +11,7 @@ export default function AllMonsters({ loading, monsterDetails }) {
     keys: ['name', 'type', 'challenge_rating'],
   })
   const results = searchResults ? fuse.search(searchResults) : monsterDetails
+  console.log(results)
 
   if (loading) {
     return <LoadingAnimation />

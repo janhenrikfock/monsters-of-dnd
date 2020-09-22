@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function MonsterDetailsHead({ name, type, size, alignment }) {
+export default function DetailsHead({ name, type, size, alignment }) {
   return (
     <>
       <Headline>{name}</Headline>

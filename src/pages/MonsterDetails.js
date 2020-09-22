@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import MonsterDetailsHead from './MonsterDetailsHead'
-import MonsterDetailsStat from './MonsterDetailsStats'
-import Proficiencies from './Proficiencies'
-import ActionsAbilities from './ActionsAbilities'
+import DetailsHead from '../components/DetailsHead'
+import DetailsStats from '../components/DetailsStats'
+import Proficiencies from '../components/Proficiencies'
+import ActionsAbilities from '../components/ActionsAbilities'
 
 export default function MonsterDetails({ monster }) {
   useEffect(() => {
@@ -11,14 +11,14 @@ export default function MonsterDetails({ monster }) {
 
   return (
     <>
-      <MonsterDetailsHead
+      <DetailsHead
         name={monster.name}
         type={monster.type}
         cr={monster.challenge_rating}
         size={monster.size}
         alignment={monster.alignment}
       />
-      <MonsterDetailsStat
+      <DetailsStats
         strength={monster.strength}
         dexterity={monster.dexterity}
         constitution={monster.constitution}

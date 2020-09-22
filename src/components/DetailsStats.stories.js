@@ -1,13 +1,13 @@
 import React from 'react'
 
-import MonsterDetailsStats from './MonsterDetailsStats'
+import DetailsStats from './DetailsStats'
 
 export default {
   title: 'Detailspage/Statblock ',
-  component: MonsterDetailsStats,
+  component: DetailsStats,
 }
 
-const Template = (args) => <MonsterDetailsStats {...args} />
+const Template = (args) => <DetailsStats {...args} />
 
 export const StatBlock = Template.bind({})
 StatBlock.args = {
