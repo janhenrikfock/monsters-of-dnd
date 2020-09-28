@@ -1,10 +1,10 @@
 import React, { useRef } from 'react'
 import { useReactToPrint } from 'react-to-print'
-import styled from 'styled-components/macro'
+import ActionsAbilities from '../components/ActionsAbilities'
+import DetailButtons from '../components/DetailButtons'
 import DetailsHead from '../components/DetailsHead'
 import DetailsStats from '../components/DetailsStats'
 import Proficiencies from '../components/Proficiencies'
-import ActionsAbilities from '../components/ActionsAbilities'
 
 export default function MonsterDetails({ monster }) {
   window.scrollTo(0, 0)
@@ -23,7 +23,7 @@ export default function MonsterDetails({ monster }) {
         size={monster.size}
         alignment={monster.alignment}
       />
-      <CreatePDF onClick={handlePrint}>PDF</CreatePDF>
+      <DetailButtons handlePrint={handlePrint} />
       <DetailsStats
         strength={monster.strength}
         dexterity={monster.dexterity}
@@ -41,14 +41,3 @@ export default function MonsterDetails({ monster }) {
     </div>
   )
 }
-
-const CreatePDF = styled.button`
-  margin-top: 15px;
-  background: crimson;
-  color: white;
-  margin-left: 42%;
-  border: none;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-`
