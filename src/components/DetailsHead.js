@@ -5,7 +5,6 @@ export default function DetailsHead({ name, type, size, alignment }) {
   return (
     <>
       <Headline>{name}</Headline>
-
       <SingleInfo>
         {size} {type}, {alignment}
       </SingleInfo>

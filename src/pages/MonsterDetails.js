@@ -1,16 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useRef } from 'react'
+import { useReactToPrint } from 'react-to-print'
 import DetailsHead from '../components/DetailsHead'
 import DetailsStats from '../components/DetailsStats'
 import Proficiencies from '../components/Proficiencies'
 import ActionsAbilities from '../components/ActionsAbilities'
 
 export default function MonsterDetails({ monster }) {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+  window.scrollTo(0, 0)
+
+  const componentRef = useRef()
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  })
 
   return (
-    <>
+    <div ref={componentRef}>
       <DetailsHead
         name={monster.name}
         type={monster.type}
@@ -18,6 +22,7 @@ export default function MonsterDetails({ monster }) {
         size={monster.size}
         alignment={monster.alignment}
       />
+      <button onClick={handlePrint}>Print this out!</button>
       <DetailsStats
         strength={monster.strength}
         dexterity={monster.dexterity}
@@ -32,6 +37,6 @@ export default function MonsterDetails({ monster }) {
         dataArray={monster.special_abilities}
       />
       <ActionsAbilities headline={'Actions'} dataArray={monster.actions} />
-    </>
+    </div>
   )
 }
