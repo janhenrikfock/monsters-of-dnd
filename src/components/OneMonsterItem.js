@@ -5,7 +5,7 @@ import listlogo from './images/list.png'
 
 export default function OneMonsterItem({ monster }) {
   return (
-    <ComponentContainer>
+    <ComponentContainer monstertype={monster.type}>
       <Container>
         <MonsterNameStyled>{monster.name}</MonsterNameStyled>
         <ContainerTypeCR>
@@ -19,6 +19,22 @@ export default function OneMonsterItem({ monster }) {
       </NavLink>
     </ComponentContainer>
   )
+}
+const typeColors = {
+  aberration: 'crimson',
+  celestial: 'yellow',
+  monstrosity: 'green',
+  dragon: 'gold',
+  beast: 'brown',
+  humanoid: 'pink',
+  elemental: 'lightblue',
+  plant: 'lightgreen',
+  fiend: 'orange',
+  fey: 'lightgrey',
+  construct: 'silver',
+  giant: 'maroon',
+  undead: 'lightgreen',
+  ooze: 'purple',
 }
 const ComponentContainer = styled.div`
   display: flex;
@@ -54,7 +70,6 @@ const ParagraphType = styled.p`
   margin: 0;
   padding-left: 2px;
   text-align: left;
-  border-left: 2px solid #ffffff;
 `
 const ParagraphCR = styled.p`
   font-size: 15px;
@@ -66,9 +81,12 @@ const ParagraphCR = styled.p`
 const DetailLink = styled.img`
   max-height: 50px;
   max-width: 50px;
-  border: 2px solid var(--highlightcolor);
   border-radius: 6px;
+  /* border-width: 2px;
+  border-style: solid; */
+  /* border-color: ${({ monstertype }) => typeColors[monstertype]}; */
   padding: 10px;
   margin: 5px 10px;
   color: white;
+  border: 2px solid var(--highlightcolor);
 `

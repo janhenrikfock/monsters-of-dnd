@@ -11,7 +11,6 @@ export default function AllMonsters({ loading, monsterDetails }) {
     keys: ['name', 'type', 'challenge_rating'],
   })
   const results = searchResults ? fuse.search(searchResults) : monsterDetails
-  console.log(results)
 
   if (loading) {
     return <LoadingAnimation />

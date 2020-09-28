@@ -4,20 +4,19 @@ import styled from 'styled-components/macro'
 
 export default function ActionsAbilities({ headline, dataArray }) {
   if (!dataArray) {
-    return <></>
-  } else {
-    return (
-      <>
-        <ComponentHeadline>{headline}</ComponentHeadline>
-        {dataArray?.map((object) => (
-          <Container key={uuidv4()}>
-            <Name>{object.name}</Name>
-            <Desc>{object.desc}</Desc>
-          </Container>
-        ))}
-      </>
-    )
+    return null
   }
+  return (
+    <>
+      <ComponentHeadline>{headline}</ComponentHeadline>
+      {dataArray?.map((object) => (
+        <Container key={uuidv4()}>
+          <Name>{object.name}</Name>
+          <Desc>{object.desc}</Desc>
+        </Container>
+      ))}
+    </>
+  )
 }
 const Container = styled.div`
   padding: 3px;
