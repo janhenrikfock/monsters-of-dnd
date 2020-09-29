@@ -8,7 +8,7 @@ export default function AllMonsters({ loading, monsterDetails }) {
   const [searchResults, setSearchResults] = useState('')
 
   const fuse = new Fuse(monsterDetails, {
-    keys: ['name', 'type', 'challenge_rating'],
+    keys: ['name', 'type', 'challenge_rating', 'alignment'],
   })
   const results = searchResults ? fuse.search(searchResults) : monsterDetails
 
@@ -54,7 +54,7 @@ const Headline = styled.h1`
   color: black;
   font-size: 150%;
   text-align: center;
-  border-bottom: 3px solid var(--highlightcolor);
+  border-bottom: 3px solid var(--highlightyellow);
   font-family: serif;
   padding-bottom: 13px;
 `
