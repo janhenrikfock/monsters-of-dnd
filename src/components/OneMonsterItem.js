@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import listlogo from './images/list.png'
+import booklogo from './images/book.png'
 
 export default function OneMonsterItem({ monster }) {
   return (
@@ -18,11 +18,11 @@ export default function OneMonsterItem({ monster }) {
               {monster.alignment}
             </AlignmentTag>
           </ContainerTags>
-          <ParagraphCR>CR: {monster.challenge_rating}</ParagraphCR>
+          <ParagraphCR>CR:{monster.challenge_rating}</ParagraphCR>
         </ContainerTypeCR>
       </Container>
       <NavLink to={'/monster/' + monster.index}>
-        <DetailLink src={listlogo} alt="view details" />
+        <DetailLink src={booklogo} alt="view details" />
       </NavLink>
     </ComponentContainer>
   )
@@ -70,7 +70,7 @@ const MonsterNameStyled = styled.h2`
 const ContainerTypeCR = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 3px;
+  padding: 3px 0;
   flex: 1 1 auto;
 `
 const ContainerTags = styled.div`
