@@ -54,7 +54,7 @@ const Headline = styled.h1`
   color: black;
   font-size: 150%;
   text-align: center;
-  border-bottom: 3px solid var(--highlightyellow);
+  border-bottom: 3px solid var(--highlightcolor);
   font-family: serif;
   padding-bottom: 13px;
 `

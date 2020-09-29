@@ -38,7 +38,6 @@ const tagColors = {
 }
 const ComponentContainer = styled.div`
   display: flex;
-
   align-items: center;
 `
 const Container = styled.div`
@@ -75,7 +74,7 @@ const TypeTag = styled.p`
   text-transform: capitalize;
   font-size: 16px;
   text-align: left;
-  border: 2px solid lightgreen;
+  border: 2px solid lightgrey;
 `
 const AlignmentTag = styled.p`
   margin: 2px;
@@ -88,7 +87,9 @@ const AlignmentTag = styled.p`
   text-align: left;
 `
 const ParagraphCR = styled.p`
-  font-size: 15px;
+  margin: 2px;
+  font-size: 16px;
+  padding: 7px;
   margin: 0;
   text-align: right;
   text-decoration: none;
@@ -99,5 +100,5 @@ const DetailLink = styled.img`
   border-radius: 6px;
   padding: 10px;
   margin: 5px 10px;
-  border: 2px solid var(--highlightyellow);
+  border: 2px solid var(--highlightcolor);
 `
