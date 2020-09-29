@@ -60,7 +60,7 @@ const Container = styled.div`
 `
 const MonsterNameStyled = styled.h2`
   margin: 0 0 7px 0;
-  padding: 3px;
+  padding: 3px 9px;
   font-size: 20px;
   text-align: left;
   vertical-align: text-bottom;
