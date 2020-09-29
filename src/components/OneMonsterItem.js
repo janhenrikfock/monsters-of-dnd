@@ -44,6 +44,7 @@ const Alignments = {
   'any non-lawful alignment': 'none',
   'any chaotic alignment': 'none',
   'neutral good (50%) or neutral evil (50%)': 'none',
+  'any alignment': 'none',
 }
 
 const ComponentContainer = styled.div`
