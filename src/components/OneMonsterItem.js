@@ -11,7 +11,10 @@ export default function OneMonsterItem({ monster }) {
         <ContainerTypeCR>
           <ContainerTags>
             <TypeTag>{monster.type}</TypeTag>
-            <AlignmentTag alignmentColors={monster.alignment}>
+            <AlignmentTag
+              alignmentColors={monster.alignment}
+              noTagRendered={monster.alignment}
+            >
               {monster.alignment}
             </AlignmentTag>
           </ContainerTags>
@@ -36,9 +39,17 @@ const tagColors = {
   'chaotic neutral': 'var(--chaotic-neutralcolor)',
   'chaotic evil': 'var(--chaotic-evilcolor)',
 }
+const Alignments = {
+  'any non-good alignment': 'none',
+  'any non-lawful alignment': 'none',
+  'any chaotic alignment': 'none',
+  'neutral good (50%) or neutral evil (50%)': 'none',
+}
+
 const ComponentContainer = styled.div`
   display: flex;
   align-items: center;
+  border-bottom: 1px solid var(--bordergrey);
 `
 const Container = styled.div`
   width: 100%;
@@ -46,7 +57,6 @@ const Container = styled.div`
   padding: 10px;
   display: inline-block;
   color: var(--textblack);
-  border-bottom: 1px solid var(--bordergrey);
 `
 const MonsterNameStyled = styled.h2`
   margin: 0 0 7px 0;
@@ -69,7 +79,7 @@ const ContainerTags = styled.div`
 const TypeTag = styled.p`
   margin: 2px;
   width: content-box;
-  padding: 3px 8px;
+  padding: 3px 5px;
   border-radius: 5px;
   text-transform: capitalize;
   font-size: 16px;
@@ -77,9 +87,10 @@ const TypeTag = styled.p`
   border: 2px solid lightgrey;
 `
 const AlignmentTag = styled.p`
+  display: ${({ noTagRendered }) => Alignments[noTagRendered]};
   margin: 2px;
   width: content-box;
-  padding: 3px 8px;
+  padding: 3px 5px;
   border: 2px solid ${({ alignmentColors }) => tagColors[alignmentColors]};
   border-radius: 5px;
   text-transform: capitalize;
@@ -89,7 +100,7 @@ const AlignmentTag = styled.p`
 const ParagraphCR = styled.p`
   margin: 2px;
   font-size: 16px;
-  padding: 7px;
+  padding: 7px 3px;
   margin: 0;
   text-align: right;
   text-decoration: none;

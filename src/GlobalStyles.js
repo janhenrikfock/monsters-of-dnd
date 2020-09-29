@@ -25,6 +25,7 @@ p {
     --textblack: #61615F;
     --bordergrey: #d0d0cd;
     --highlightcolor: #E1B202;
+    --unalignedcolor: lightgreen;
     --lawful-goodcolor: #68c02b;
     --lawful-neutralcolor: #511f7c;
     --lawful-evilcolor:  #FF5733 ;
