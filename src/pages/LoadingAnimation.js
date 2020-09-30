@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import loadingspinner from '../components/images/loadingspinner.gif'
+import loadingbars from '../components/images/loadingbars.gif'
 
 export default function LoadingAnimation() {
   return (
     <LoaderContainer>
-      <Image src={loadingspinner} alt="loading" />
+      <Image src={loadingbars} alt="loading" />
     </LoaderContainer>
   )
 }
@@ -18,9 +18,11 @@ const LoaderContainer = styled.div`
   left: 0;
 `
 const Image = styled.img`
-  top: 30%;
+  height: 80px;
+  width: 100px;
+  top: 45%;
   margin-left: 50%;
-  left: -130px;
+  left: -30px;
   z-index: 100;
   position: absolute;
 `

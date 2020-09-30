@@ -24,16 +24,18 @@ p {
     --headlineblack: #262626;
     --textblack: #61615F;
     --bordergrey: #d0d0cd;
-    --highlightcolor: #E1B202;
+    --highlightcolor: #f8b26a;
+    /* --highlightcolor: #E1B202; */
     --unalignedcolor: lightgreen;
-    --lawful-goodcolor: #68c02b;
+    --lawful-goodcolor: #abbd81;
     --lawful-neutralcolor: #511f7c;
-    --lawful-evilcolor:  #FF5733 ;
+    --lawful-evilcolor: #f47e60;
     --neutral-goodcolor: #308fe0;
     --neutralcolor: lightgrey;
     --neutral-evilcolor: #c0842b;
     --chaotic-goodcolor: #2bc084;
     --chaotic-neutralcolor: #b2c02b;
-    --chaotic-evilcolor: #c0392b;
+    --chaotic-evilcolor: #e15b64;
+    /* --chaotic-evilcolor: #c0392b; */
 }
 `
