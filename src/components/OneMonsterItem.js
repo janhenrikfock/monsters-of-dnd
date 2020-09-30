@@ -1,60 +1,68 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import listlogo from './images/list.png'
+import booklogo from './images/book.png'
 
 export default function OneMonsterItem({ monster }) {
   return (
-    <ComponentContainer monstertype={monster.type}>
+    <ComponentContainer>
       <Container>
         <MonsterNameStyled>{monster.name}</MonsterNameStyled>
         <ContainerTypeCR>
-          <ParagraphType>{monster.type}</ParagraphType>
-          <ParagraphCR>CR: {monster.challenge_rating}</ParagraphCR>
+          <ContainerTags>
+            <TypeTag>{monster.type}</TypeTag>
+            <AlignmentTag
+              alignmentColors={monster.alignment}
+              noTagRendered={monster.alignment}
+            >
+              {monster.alignment}
+            </AlignmentTag>
+          </ContainerTags>
+          <ParagraphCR>CR:{monster.challenge_rating}</ParagraphCR>
         </ContainerTypeCR>
       </Container>
-
       <NavLink to={'/monster/' + monster.index}>
-        <DetailLink src={listlogo} alt="view details" />
+        <DetailLink src={booklogo} alt="view details" />
       </NavLink>
     </ComponentContainer>
   )
 }
-const typeColors = {
-  aberration: 'crimson',
-  celestial: 'yellow',
-  monstrosity: 'green',
-  dragon: 'gold',
-  beast: 'brown',
-  humanoid: 'pink',
-  elemental: 'lightblue',
-  plant: 'lightgreen',
-  fiend: 'orange',
-  fey: 'lightgrey',
-  construct: 'silver',
-  giant: 'maroon',
-  undead: 'lightgreen',
-  ooze: 'purple',
+const tagColors = {
+  unaligned: 'var(--unalignedcolor)',
+  'lawful evil': 'var(--lawful-evilcolor)',
+  'lawful good': 'var(--lawful-goodcolor)',
+  'lawful neutral': 'var(--lawful-neutralcolor)',
+  'neutral good': 'var(--neutral-goodcolor)',
+  neutral: 'var(--neutralcolor)',
+  'neutral evil': 'var(--neutral-evilcolor)',
+  'chaotic good': 'var(--chaotic-goodcolor)',
+  'chaotic neutral': 'var(--chaotic-neutralcolor)',
+  'chaotic evil': 'var(--chaotic-evilcolor)',
 }
+const Alignments = {
+  'any non-good alignment': 'none',
+  'any non-lawful alignment': 'none',
+  'any chaotic alignment': 'none',
+  'neutral good (50%) or neutral evil (50%)': 'none',
+  'any alignment': 'none',
+}
+
 const ComponentContainer = styled.div`
   display: flex;
-  padding: 2px;
   align-items: center;
+  border-bottom: 1px solid var(--bordergrey);
 `
 const Container = styled.div`
   width: 100%;
   margin: 4px 0;
   padding: 10px;
   display: inline-block;
-  text-decoration: none;
   color: var(--textblack);
-  border-bottom: 1px solid #d0d0cd;
 `
 const MonsterNameStyled = styled.h2`
   margin: 0 0 7px 0;
-  padding-left: 2px;
-  color: #262626;
-  font-size: 100%;
+  padding: 3px 9px;
+  font-size: 20px;
   text-align: left;
   vertical-align: text-bottom;
   font-family: serif;
@@ -62,18 +70,38 @@ const MonsterNameStyled = styled.h2`
 `
 const ContainerTypeCR = styled.div`
   display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  flex: 1 1 auto;
 `
-const ParagraphType = styled.p`
+const ContainerTags = styled.div`
+  display: flex;
+`
+const TypeTag = styled.p`
+  margin: 2px;
+  width: content-box;
+  padding: 3px 5px;
+  border-radius: 5px;
   text-transform: capitalize;
-  font-size: 15px;
-  flex: 1 1;
-  margin: 0;
-  padding-left: 2px;
+  font-size: 16px;
+  text-align: left;
+  border: 2px solid lightgrey;
+`
+const AlignmentTag = styled.p`
+  display: ${({ noTagRendered }) => Alignments[noTagRendered]};
+  margin: 2px;
+  width: content-box;
+  padding: 3px 5px;
+  border: 2px solid ${({ alignmentColors }) => tagColors[alignmentColors]};
+  border-radius: 5px;
+  text-transform: capitalize;
+  font-size: 16px;
   text-align: left;
 `
 const ParagraphCR = styled.p`
-  font-size: 15px;
-  flex: 1 1;
+  margin: 2px;
+  font-size: 16px;
+  padding: 7px 3px;
   margin: 0;
   text-align: right;
   text-decoration: none;
@@ -82,11 +110,7 @@ const DetailLink = styled.img`
   max-height: 50px;
   max-width: 50px;
   border-radius: 6px;
-  /* border-width: 2px;
-  border-style: solid; */
-  /* border-color: ${({ monstertype }) => typeColors[monstertype]}; */
   padding: 10px;
   margin: 5px 10px;
-  color: white;
   border: 2px solid var(--highlightcolor);
 `

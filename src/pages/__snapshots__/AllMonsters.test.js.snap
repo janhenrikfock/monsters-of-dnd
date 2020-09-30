@@ -2,56 +2,71 @@
 
 exports[`AllMonsters renders OneMonsterItem correctly 1`] = `
 Array [
-  <h1
-    className="AllMonsters__Headline-sc-8qeyzf-0 kSodLq"
+  <header
+    className="AllMonsters__Header-sc-8qeyzf-0 iTyJER"
   >
-    Monsters of DnD
-  </h1>,
-  <input
-    className="AllMonsters__Input-sc-8qeyzf-1 dkMQrm"
-    onChange={[Function]}
-    placeholder="Search for Monster"
-    type="text"
-    value=""
-  />,
-  <div
-    className="sc-AxjAm kdOkKT"
+    <h1
+      className="AllMonsters__Headline-sc-8qeyzf-2 hElxVk"
+    >
+      Monsters of DnD
+    </h1>
+    <input
+      className="AllMonsters__Input-sc-8qeyzf-3 cUVJaY"
+      onChange={[Function]}
+      placeholder="Search for Monster"
+      type="text"
+      value=""
+    />
+  </header>,
+  <main
+    className="AllMonsters__Main-sc-8qeyzf-1 cfHHgp"
   >
     <div
-      className="sc-AxirZ zJNrh"
+      className="sc-AxjAm dLSYMf"
     >
-      <h2
-        className="sc-AxiKw bMJRoL"
-      >
-        Monstername
-      </h2>
       <div
-        className="sc-AxhCb ZaNiK"
+        className="sc-AxirZ CVuNr"
       >
-        <p
-          className="sc-AxhUy cLsmCN"
+        <h2
+          className="sc-AxiKw cUhBKK"
         >
-          type
-        </p>
-        <p
-          className="sc-AxgMl bnYzSD"
+          Monstername
+        </h2>
+        <div
+          className="sc-AxhCb ceVZWe"
         >
-          CR: 
-          00
-        </p>
+          <div
+            className="sc-AxhUy gWaiz"
+          >
+            <p
+              className="sc-AxgMl iKoGXN"
+            >
+              type
+            </p>
+            <p
+              className="sc-AxheI bQSAct"
+            />
+          </div>
+          <p
+            className="sc-Axmtr VxVIM"
+          >
+            CR:
+            00
+          </p>
+        </div>
       </div>
+      <a
+        aria-current={null}
+        href="/monster/monstername"
+        onClick={[Function]}
+      >
+        <img
+          alt="view details"
+          className="sc-AxmLO cuCGsZ"
+          src="book.png"
+        />
+      </a>
     </div>
-    <a
-      aria-current={null}
-      href="/monster/monstername"
-      onClick={[Function]}
-    >
-      <img
-        alt="view details"
-        className="sc-AxheI eKqwNu"
-        src="list.png"
-      />
-    </a>
-  </div>,
+  </main>,
 ]
 `;

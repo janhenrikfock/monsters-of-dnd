@@ -11,7 +11,7 @@ export default function Proficiencies({ proficiencies }) {
         {proficiencies.map((proficiency) => (
           <div key={proficiency.index}>
             <ListItemProficency>
-              {proficiency.name} + {proficiency.value}
+              {proficiency.proficiency.name} + {proficiency.value}
             </ListItemProficency>
           </div>
         ))}
