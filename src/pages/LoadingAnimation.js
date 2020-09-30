@@ -19,9 +19,9 @@ const LoaderContainer = styled.div`
 const Image = styled.img`
   height: 80px;
   width: 100px;
-  top: 45%;
+  top: 35%;
   margin-left: 50%;
-  left: -65px;
+  left: -57px;
   z-index: 100;
   position: absolute;
 `
