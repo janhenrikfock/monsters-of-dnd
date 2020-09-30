@@ -8,9 +8,9 @@ The App is optimized for mobile use, please switch your browser to responsive mo
 
 ## Impressions
 
-![Screenshot](screenshots/janhenrikfock_MonstersOfDnD.png)
+![Screenshot](screenshots/screenshot_landingpage.png)
 
-![gif](screenshots/janhenrikfock_MonstersOfDnD.gif)
+![gif](screenshots/video_functionality.gif)
 
 ## Tech-Stack
 

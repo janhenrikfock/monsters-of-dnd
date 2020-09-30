@@ -5,17 +5,23 @@ import Proficiencies from './Proficiencies'
 describe('Proficiencies', () => {
   const proficiencies = [
     {
-      name: 'Namestring',
+      proficiency: {
+        name: 'Namestring',
+      },
       value: 6,
       index: 1,
     },
     {
-      name: 'Namestring',
+      proficiency: {
+        name: 'Namestring',
+      },
       value: 2,
       index: 2,
     },
     {
-      name: 'Namestring',
+      proficiency: {
+        name: 'Namestring',
+      },
       value: 1,
       index: 3,
     },
