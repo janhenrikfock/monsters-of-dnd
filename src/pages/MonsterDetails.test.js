@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react'
+import { MemoryRouter as Router } from 'react-router-dom'
 import React from 'react'
 import MonsterDetails from './MonsterDetails'
 
@@ -27,16 +28,12 @@ describe('MonsterDetails', () => {
     charisma: 10,
     proficiencies: [
       {
-        index: 'saving-throw-string',
-        name: 'Savingthrow or proficiency',
+        proficiency: {
+          name: 'Savingthrow or proficiency',
+          index: 'saving-throw-string',
+          url: 'url/as/a/string',
+        },
         value: 0,
-        url: 'url/as/a/string',
-      },
-      {
-        index: 'saving-throw-string2',
-        name: 'Savingthrow or proficiency',
-        value: 0,
-        url: 'url/as/a/string',
       },
     ],
     damage_vulnerabilities: [],
@@ -77,7 +74,11 @@ describe('MonsterDetails', () => {
   }
 
   it('Displays the monstername as headline', () => {
-    const { getByText } = render(<MonsterDetails monster={monster} />)
+    const { getByText } = render(
+      <Router>
+        <MonsterDetails monster={monster} />
+      </Router>
+    )
     expect(getByText(monster.name)).toBeInTheDocument()
   })
 })
