@@ -9,7 +9,6 @@ export default function LoadingAnimation() {
     </LoaderContainer>
   )
 }
-
 const LoaderContainer = styled.div`
   position: fixed;
   height: 100%;
@@ -22,7 +21,7 @@ const Image = styled.img`
   width: 100px;
   top: 45%;
   margin-left: 50%;
-  left: -30px;
+  left: -65px;
   z-index: 100;
   position: absolute;
 `
