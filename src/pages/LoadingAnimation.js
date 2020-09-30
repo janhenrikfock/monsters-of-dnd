@@ -21,7 +21,7 @@ const Image = styled.img`
   width: 100px;
   top: 35%;
   margin-left: 50%;
-  left: -57px;
+  left: -50px;
   z-index: 100;
   position: absolute;
 `
