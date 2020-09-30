@@ -12,10 +12,24 @@ The App is optimized for mobile use, please switch your browser to responsive mo
 
 ![gif](screenshots/janhenrikfock_MonstersOfDnD.gif)
 
+## Tech-Stack
+
+- React
+- React-Hooks
+- React-Router
+- styled-components
+- uuid
+- storybook
+- Jest
+- React Testing Library
+- Cypress
+- Fuse.js
+- react-to-print
+
 ## Setup
 
 - Clone this repository
-- Install all debendencies using
+- Install all dependencies using
 
 ```
 $ npm install
