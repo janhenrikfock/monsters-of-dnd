@@ -7,23 +7,23 @@ describe('Proficiencies', () => {
     {
       proficiency: {
         name: 'Namestring',
+        index: 'indexstring1',
       },
       value: 6,
-      index: 1,
     },
     {
       proficiency: {
         name: 'Namestring',
+        index: 'Indexstring2',
       },
       value: 2,
-      index: 2,
     },
     {
       proficiency: {
         name: 'Namestring',
+        index: 'Indexstring3',
       },
       value: 1,
-      index: 3,
     },
   ]
   it('displays name and value as a li in a ul', () => {

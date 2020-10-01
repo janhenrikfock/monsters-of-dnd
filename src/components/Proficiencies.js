@@ -9,7 +9,7 @@ export default function Proficiencies({ proficiencies }) {
       <>
         <ComponentHeadline>Proficiencies and Skills</ComponentHeadline>
         {proficiencies.map((proficiency) => (
-          <div key={proficiency.index}>
+          <div key={proficiency.proficiency.index}>
             <ListItemProficency>
               {proficiency.proficiency.name} + {proficiency.value}
             </ListItemProficency>
