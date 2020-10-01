@@ -72,8 +72,8 @@ describe('MonsterDetails', () => {
       },
     ],
   }
-
-  it('Displays the monstername as headline', () => {
+  window.scrollTo(0, 0)
+  it.only('Displays the monstername as headline', () => {
     const { getByText } = render(
       <Router>
         <MonsterDetails monster={monster} />
