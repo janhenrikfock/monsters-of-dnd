@@ -8,6 +8,8 @@ The App is optimized for mobile use, please switch your browser to responsive mo
 
 ## Impressions
 
+![screenshot](screenshots/screenshot_landingpage.png)
+
 ![gif](screenshots/video_functionality.gif)
 
 ## Tech-Stack
