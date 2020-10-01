@@ -12,7 +12,7 @@ describe('DetailsStats', () => {
     charisma: 10,
   }
 
-  it.only('displays stats in the component', () => {
+  it('displays stats in the component', () => {
     const { getByText } = render(
       <DetailsStats
         strength={monster.strength}
