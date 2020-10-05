@@ -1,7 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import booklogo from './images/book.png'
+
+OneMonsterItem.propTypes = {
+  monster: PropTypes.object,
+}
 
 export default function OneMonsterItem({ monster }) {
   return (

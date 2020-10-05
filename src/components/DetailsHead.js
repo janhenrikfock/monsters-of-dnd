@@ -1,5 +1,13 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
+
+DetailsHead.propTypes = {
+  name: PropTypes.string,
+  type: PropTypes.string,
+  size: PropTypes.string,
+  alignment: PropTypes.string,
+}
 
 export default function DetailsHead({ name, type, size, alignment }) {
   return (

@@ -1,5 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
+
+Proficiencies.propTypes = {
+  proficiencies: PropTypes.array,
+}
 
 export default function Proficiencies({ proficiencies }) {
   if (proficiencies?.length === 0) {

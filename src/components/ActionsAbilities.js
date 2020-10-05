@@ -1,6 +1,12 @@
+import PropTypes from 'prop-types'
 import React from 'react'
-import uuidv4 from 'uuid/v4'
 import styled from 'styled-components/macro'
+import uuidv4 from 'uuid/v4'
+
+ActionsAbilities.propTypes = {
+  headline: PropTypes.string,
+  dataArray: PropTypes.array,
+}
 
 export default function ActionsAbilities({ headline, dataArray }) {
   if (!dataArray) {
