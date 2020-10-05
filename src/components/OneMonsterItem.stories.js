@@ -3,7 +3,7 @@ import React from 'react'
 import OneMonsterItem from './OneMonsterItem'
 
 export default {
-  title: 'Example/Singlemonster',
+  title: 'Components/Singlemonster',
   component: OneMonsterItem,
 }
 

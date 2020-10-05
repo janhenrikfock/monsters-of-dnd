@@ -1,9 +1,8 @@
 import React from 'react'
-
 import Proficiencies from './Proficiencies'
 
 export default {
-  title: 'Detailspage/ProficiencyList ',
+  title: 'Components/ProficiencyList',
   component: Proficiencies,
 }
 
@@ -13,15 +12,24 @@ export const ProficiencyList = Template.bind({})
 ProficiencyList.args = {
   proficiencies: [
     {
-      name: 'Namestring',
-      value: 6,
+      proficiency: {
+        name: 'Namestring',
+        index: 'indexstring1',
+      },
+      value: 3,
     },
     {
-      name: 'Namestring',
+      proficiency: {
+        name: 'Namestring',
+        index: 'Indexstring2',
+      },
       value: 2,
     },
     {
-      name: 'Namestring',
+      proficiency: {
+        name: 'Namestring',
+        index: 'Indexstring3',
+      },
       value: 1,
     },
   ],

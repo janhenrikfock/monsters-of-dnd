@@ -2,7 +2,7 @@ import React from 'react'
 import AllMonsters from './AllMonsters'
 
 export default {
-  title: 'Example/AllMonsters',
+  title: 'Pages/AllMonsters',
   component: AllMonsters,
 }
 

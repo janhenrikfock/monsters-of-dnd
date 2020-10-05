@@ -3,7 +3,7 @@ import React from 'react'
 import DetailsStats from './DetailsStats'
 
 export default {
-  title: 'Detailspage/Statblock ',
+  title: 'Components/Statblock ',
   component: DetailsStats,
 }
 

@@ -3,7 +3,7 @@ import React from 'react'
 import DetailsHead from './DetailsHead'
 
 export default {
-  title: 'Detailspage/Head ',
+  title: 'Components/Head ',
   component: DetailsHead,
 }
 
