@@ -1,6 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import calculateModifier from './lib/calculateModifier'
+
+DetailsStats.propTypes = {
+  strength: PropTypes.number,
+  dexterity: PropTypes.number,
+  constitution: PropTypes.number,
+  intelligence: PropTypes.number,
+  wisdom: PropTypes.number,
+  charisma: PropTypes.number,
+}
 
 export default function DetailsStats({
   strength,

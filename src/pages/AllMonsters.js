@@ -1,8 +1,14 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
 import LoadingAnimation from './LoadingAnimation'
 import OneMonsterItem from '../components/OneMonsterItem'
 import Fuse from 'fuse.js'
+
+AllMonsters.propTypes = {
+  loading: PropTypes.bool,
+  monsterDetail: PropTypes.array,
+}
 
 export default function AllMonsters({ loading, monsterDetails }) {
   const [searchResults, setSearchResults] = useState('')

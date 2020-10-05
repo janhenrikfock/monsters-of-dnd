@@ -1,7 +1,12 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import homelogo from './images/home.png'
+
+DetailButtons.propTypes = {
+  handlePrint: PropTypes.func,
+}
 
 export default function DetailButtons({ handlePrint }) {
   return (
