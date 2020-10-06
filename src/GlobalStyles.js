@@ -12,10 +12,6 @@ html {
 
 header {
     max-width: 750px;
-    @media (min-width: 750px){
-        
-    }
-
 }
 
 body {
