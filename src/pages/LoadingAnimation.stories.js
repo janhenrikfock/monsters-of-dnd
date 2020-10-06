@@ -1,10 +1,11 @@
 import React from 'react'
 import LoadingAnimation from './LoadingAnimation'
-import loadingspinner from './images/loadingspinner.gif'
 
 export default {
-  title: 'LoadingAnimation',
+  title: 'Pages/LoadingGif',
   component: LoadingAnimation,
 }
 
-export const Loading = <img src={loadingspinner} alt="loading" />
+const Template = (args) => <LoadingAnimation {...args} />
+
+export const LoadingGif = Template.bind({})

@@ -3,7 +3,7 @@ import React from 'react'
 import ActionsAbilities from './ActionsAbilities'
 
 export default {
-  title: 'Detailspage/Actions or Abilities ',
+  title: 'Components/Actions or Abilities ',
   component: ActionsAbilities,
 }
 const Template = (args) => <ActionsAbilities {...args} />
