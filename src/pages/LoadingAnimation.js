@@ -13,6 +13,7 @@ const LoaderContainer = styled.div`
   position: fixed;
   height: 100%;
   width: 100%;
+  max-width: 750px;
   top: 0;
   left: 0;
 `

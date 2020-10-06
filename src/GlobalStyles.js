@@ -6,8 +6,10 @@ box-sizing: border-box;
 }
 header {
     max-width: 750px;
-    @media (min-width: 768px) {
-    }
+    /* @media (min-width: 750px) {
+        margin-left: 50%;
+        left: -375px;
+    } */
 }
 
 body {
