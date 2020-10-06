@@ -14,4 +14,6 @@ DetailHead.args = {
   name: 'Monstername',
   alignement: 'alignment',
   type: 'type',
+  size: 'size',
+  alignment: 'any alignment',
 }
