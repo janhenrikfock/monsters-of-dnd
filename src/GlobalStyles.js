@@ -4,12 +4,14 @@ export default createGlobalStyle`
 * {
 box-sizing: border-box;
 }
+html {
+    @media (min-width: 750px){
+        margin-left: 30%;
+    }
+}
+
 header {
     max-width: 750px;
-    /* @media (min-width: 750px) {
-        margin-left: 50%;
-        left: -375px;
-    } */
 }
 
 body {
