@@ -10,11 +10,8 @@ AllMonsters.propTypes = {
   monsterDetail: PropTypes.array,
 }
 
-export default function AllMonsters({
-  loading,
-  monsterDetails,
-  setMonsterDetails,
-}) {
+export default function AllMonsters({ loading, monsterDetails, useTitle }) {
+  useTitle(0)
   const [searchResults, setSearchResults] = useState('')
 
   const fuse = new Fuse(monsterDetails, {
