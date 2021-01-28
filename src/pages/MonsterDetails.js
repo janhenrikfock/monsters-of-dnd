@@ -28,7 +28,7 @@ export default function MonsterDetails({ monster, useTitle }) {
       />
       <ActionsAbilities headline={'Actions'} dataArray={monster.actions} />
       <SourceInfo>
-        The information provided on this page is provided by
+        The information displayed on this page is provided by
         http://www.dnd5eapi.co/
       </SourceInfo>
     </DetailsContainer>
