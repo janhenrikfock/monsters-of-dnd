@@ -16,22 +16,9 @@ export default function MonsterDetails({ monster }) {
 
   return (
     <div ref={componentRef}>
-      <DetailsHead
-        name={monster.name}
-        type={monster.type}
-        cr={monster.challenge_rating}
-        size={monster.size}
-        alignment={monster.alignment}
-      />
+      <DetailsHead {...monster} />
       <DetailButtons handlePrint={handlePrint} />
-      <DetailsStats
-        strength={monster.strength}
-        dexterity={monster.dexterity}
-        constitution={monster.constitution}
-        intelligence={monster.intelligence}
-        wisdom={monster.wisdom}
-        charisma={monster.charisma}
-      />
+      <DetailsStats {...monster} />
       <Proficiencies proficiencies={monster.proficiencies} />
       <ActionsAbilities
         headline="Special Abilities"

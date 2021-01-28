@@ -8,7 +8,7 @@ OneMonsterItem.propTypes = {
   monster: PropTypes.object,
 }
 
-export default function OneMonsterItem({ monster, setMonsterDetails }) {
+export default function OneMonsterItem({ monster }) {
   return (
     <ComponentContainer>
       <Container>

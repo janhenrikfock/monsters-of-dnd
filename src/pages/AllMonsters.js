@@ -38,11 +38,7 @@ export default function AllMonsters({
         </Header>
         <Main>
           {results.map((monster) => (
-            <OneMonsterItem
-              key={monster.index}
-              monster={monster}
-              setMonsterDetails={setMonsterDetails}
-            />
+            <OneMonsterItem key={monster.index} monster={monster} />
           ))}
         </Main>
       </>
