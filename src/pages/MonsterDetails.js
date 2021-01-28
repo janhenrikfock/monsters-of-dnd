@@ -40,8 +40,8 @@ const DetailsContainer = styled.div`
   }
 `
 const SourceInfo = styled.p`
-  /* display: none; */
-  bottom: 10px;
+  font-style: italic;
+  display: none;
   @media print {
     display: block;
   }
