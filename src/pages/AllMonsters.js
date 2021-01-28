@@ -10,11 +10,8 @@ AllMonsters.propTypes = {
   monsterDetail: PropTypes.array,
 }
 
-export default function AllMonsters({
-  loading,
-  monsterDetails,
-  setMonsterDetails,
-}) {
+export default function AllMonsters({ loading, monsterDetails, useTitle }) {
+  useTitle(0)
   const [searchResults, setSearchResults] = useState('')
 
   const fuse = new Fuse(monsterDetails, {
@@ -38,11 +35,7 @@ export default function AllMonsters({
         </Header>
         <Main>
           {results.map((monster) => (
-            <OneMonsterItem
-              key={monster.index}
-              monster={monster}
-              setMonsterDetails={setMonsterDetails}
-            />
+            <OneMonsterItem key={monster.index} monster={monster} />
           ))}
         </Main>
       </>

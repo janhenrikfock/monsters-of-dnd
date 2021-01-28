@@ -24,6 +24,9 @@ const AllButtons = styled.div`
   display: flex;
   flex: 1 1 auto;
   justify-content: space-evenly;
+  @media print {
+    display: none;
+  }
 `
 const PDFButton = styled.button`
   margin: 0;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import saveLocally from './components/lib/saveLocally'
+import { useTitle } from './Hooks/useTitle'
 import AllMonsters from './pages/AllMonsters'
 import MonsterDetails from './pages/MonsterDetails'
 
@@ -53,11 +54,16 @@ export default function App() {
           loading={loading}
           monsterDetails={monsterDetails}
           setMonsterDetails={setMonsterDetails}
+          useTitle={useTitle}
         />
       </Route>
       {monsterDetails.map((monster) => (
         <Route key={monster.index} path={'/monster/' + monster.index}>
-          <MonsterDetails key={monster.index} monster={monster} />
+          <MonsterDetails
+            key={monster.index}
+            monster={monster}
+            useTitle={useTitle}
+          />
         </Route>
       ))}
     </Switch>

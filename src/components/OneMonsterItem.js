@@ -8,7 +8,7 @@ OneMonsterItem.propTypes = {
   monster: PropTypes.object,
 }
 
-export default function OneMonsterItem({ monster, setMonsterDetails }) {
+export default function OneMonsterItem({ monster }) {
   return (
     <ComponentContainer>
       <Container>
@@ -119,4 +119,11 @@ const DetailLink = styled.img`
   padding: 10px;
   margin: 5px 10px;
   border: 2px solid var(--highlightcolor);
+  background-color: lightgrey;
+  transition-property: background-color;
+  transition-duration: 0.1s;
+  &:hover {
+    cursor: pointer;
+    background-color: white;
+  }
 `
