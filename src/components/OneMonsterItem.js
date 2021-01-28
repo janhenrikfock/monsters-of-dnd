@@ -8,26 +8,26 @@ OneMonsterItem.propTypes = {
   monster: PropTypes.object,
 }
 
-export default function OneMonsterItem({ monster }) {
+export default function OneMonsterItem({ monster, setMonsterDetails }) {
   return (
     <ComponentContainer>
-      <Container>
-        <MonsterNameStyled>{monster.name}</MonsterNameStyled>
-        <ContainerTypeCR>
-          <ContainerTags>
-            <TypeTag>{monster.type}</TypeTag>
-            <AlignmentTag
-              alignmentColors={monster.alignment}
-              noTagRendered={monster.alignment}
-            >
-              {monster.alignment}
-            </AlignmentTag>
-          </ContainerTags>
-          <ParagraphCR>CR:{monster.challenge_rating}</ParagraphCR>
-        </ContainerTypeCR>
-      </Container>
+      <DetailLink src={booklogo} alt="view details" />
       <NavLink to={'/monster/' + monster.index}>
-        <DetailLink src={booklogo} alt="view details" />
+        <Container>
+          <MonsterNameStyled>{monster.name}</MonsterNameStyled>
+          <ContainerTypeCR>
+            <ContainerTags>
+              <TypeTag>{monster.type}</TypeTag>
+              <AlignmentTag
+                alignmentColors={monster.alignment}
+                noTagRendered={monster.alignment}
+              >
+                {monster.alignment}
+              </AlignmentTag>
+            </ContainerTags>
+            <ParagraphCR>CR:{monster.challenge_rating}</ParagraphCR>
+          </ContainerTypeCR>
+        </Container>
       </NavLink>
     </ComponentContainer>
   )

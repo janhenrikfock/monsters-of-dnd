@@ -22,7 +22,6 @@ export default function App() {
       locallyLoadedMonsterNames.length === 0 ||
       locallyLoadedMonsterNames.length !== locallyLoadedMonsterDetails.length
     ) {
-      localStorage.clear()
       setLoading(true)
       fetch(`https://www.dnd5eapi.co/api/monsters`)
         .then((res) => res.json())
@@ -50,7 +49,11 @@ export default function App() {
   return (
     <Switch>
       <Route exact path="/">
-        <AllMonsters loading={loading} monsterDetails={monsterDetails} />
+        <AllMonsters
+          loading={loading}
+          monsterDetails={monsterDetails}
+          setMonsterDetails={setMonsterDetails}
+        />
       </Route>
       {monsterDetails.map((monster) => (
         <Route key={monster.index} path={'/monster/' + monster.index}>
