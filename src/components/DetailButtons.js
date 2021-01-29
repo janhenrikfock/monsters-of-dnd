@@ -38,6 +38,7 @@ const PDFButton = styled.button`
   border-radius: 50%;
   width: 45px;
   height: 45px;
+  cursor: pointer;
 `
 const BackButton = styled.img`
   padding: 7px;

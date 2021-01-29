@@ -1,5 +1,6 @@
 import React from 'react'
 import AllMonsters from './AllMonsters'
+import { useTitle } from '../Hooks/useTitle'
 
 export default {
   title: 'Pages/AllMonsters',
@@ -11,6 +12,7 @@ const Template = (args) => <AllMonsters {...args} />
 export const MonsterList = Template.bind({})
 MonsterList.args = {
   loading: false,
+  useTitle: useTitle,
   monsterDetails: [
     {
       index: 'name',

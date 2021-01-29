@@ -1,5 +1,6 @@
 import React from 'react'
 import MonsterDetails from './MonsterDetails'
+import { useTitle } from '../Hooks/useTitle'
 
 export default {
   title: 'Pages/MonsterDetails',
@@ -10,6 +11,7 @@ const Template = (args) => <MonsterDetails {...args} />
 
 export const LongText = Template.bind({})
 LongText.args = {
+  useTitle: useTitle,
   monster: {
     name: 'Monstername',
     type: 'type',
@@ -66,6 +68,7 @@ LongText.args = {
 }
 export const ShortText = Template.bind({})
 ShortText.args = {
+  useTitle: useTitle,
   monster: {
     name: 'Monstername',
     type: 'type',
