@@ -10,7 +10,13 @@ AllMonsters.propTypes = {
   monsterDetail: PropTypes.array,
 }
 
-export default function AllMonsters({ loading, monsterDetails, useTitle }) {
+export default function AllMonsters({
+  loading,
+  monsterDetails,
+  useTitle,
+  addFavourite,
+  favourites,
+}) {
   useTitle(0)
   const [searchResults, setSearchResults] = useState('')
 
@@ -35,7 +41,14 @@ export default function AllMonsters({ loading, monsterDetails, useTitle }) {
         </Header>
         <Main>
           {results.map((monster) => (
-            <OneMonsterItem key={monster.index} monster={monster} />
+            <OneMonsterItem
+              key={monster.index}
+              monster={monster}
+              addFavourite={addFavourite}
+              monsterIndex={monster.index}
+              monsterDetails={monsterDetails}
+              favourites={favourites}
+            />
           ))}
         </Main>
       </>

@@ -4,10 +4,12 @@ import saveLocally from './components/lib/saveLocally'
 import { useTitle } from './Hooks/useTitle'
 import AllMonsters from './pages/AllMonsters'
 import MonsterDetails from './pages/MonsterDetails'
+import useFavourites from './Hooks/useFavourites'
 
 export default function App() {
   const [monsterDetails, setMonsterDetails] = useState([])
   const [loading, setLoading] = useState(false)
+  const { favourites, addFavourite } = useFavourites()
 
   useEffect(() => {
     const locallyLoadedMonsterNames = JSON.parse(
@@ -55,6 +57,8 @@ export default function App() {
           monsterDetails={monsterDetails}
           setMonsterDetails={setMonsterDetails}
           useTitle={useTitle}
+          addFavourite={addFavourite}
+          favourites={favourites}
         />
       </Route>
       {monsterDetails.map((monster) => (
