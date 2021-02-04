@@ -9,7 +9,8 @@ import useFavourites from './Hooks/useFavourites'
 export default function App() {
   const [monsterDetails, setMonsterDetails] = useState([])
   const [loading, setLoading] = useState(false)
-  const { favourites, addFavourite } = useFavourites()
+
+  const { favourites, addFavourite } = useFavourites(monsterDetails)
 
   useEffect(() => {
     const locallyLoadedMonsterNames = JSON.parse(

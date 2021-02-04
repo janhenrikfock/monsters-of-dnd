@@ -44,7 +44,6 @@ export default function AllMonsters({
               key={monster.index}
               monster={monster}
               addFavourite={addFavourite}
-              arrayIndex={monster.index}
             />
           ))}
         </Main>

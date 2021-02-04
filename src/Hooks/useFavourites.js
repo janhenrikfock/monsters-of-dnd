@@ -3,16 +3,22 @@ import { useState } from 'react'
 export default function useFavourites(monsterDetails) {
   const [favourites, setFavourites] = useState([])
 
-  function addFavourite(index) {
-    const previous = monsterDetails.slice(0, index)
-    const marked = monsterDetails.splice(index, 1)
-    const following = monsterDetails.slice(index + 1, -1)
+  function addFavourite(monsterIndex) {
+    const indexMarkedObject = monsterDetails.findIndex(
+      (x) => x.index === monsterIndex
+    )
+    const prev = monsterDetails.slice(0, indexMarkedObject)
+    const markedObject = monsterDetails.slice(
+      indexMarkedObject,
+      indexMarkedObject + 1
+    )
+    const following = monsterDetails.slice(indexMarkedObject + 1, -1)
 
-    const newFavourite = {
-      ...marked,
+    const favouriteMonster = {
+      ...markedObject,
       favourite: true,
     }
-    setFavourites([...previous, newFavourite, ...following])
+    setFavourites([...prev, favouriteMonster, ...following])
   }
 
   return { favourites, addFavourite }

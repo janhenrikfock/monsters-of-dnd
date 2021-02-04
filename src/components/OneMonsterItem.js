@@ -8,10 +8,9 @@ OneMonsterItem.propTypes = {
   monster: PropTypes.object,
 }
 
-export default function OneMonsterItem({ monster, addFavourite, arrayIndex }) {
+export default function OneMonsterItem({ monster, addFavourite }) {
   return (
     <ComponentContainer>
-      <button onClick={console.log(arrayIndex)}>FAV</button>
       <Container>
         <MonsterNameStyled>{monster.name}</MonsterNameStyled>
         <ContainerTypeCR>
@@ -27,7 +26,9 @@ export default function OneMonsterItem({ monster, addFavourite, arrayIndex }) {
           <ParagraphCR>CR:{monster.challenge_rating}</ParagraphCR>
         </ContainerTypeCR>
       </Container>
-
+      <FavButtonStyled onClick={() => addFavourite(monster.index)}>
+        FAV
+      </FavButtonStyled>
       <NavLink to={'/monster/' + monster.index}>
         <DetailLink src={booklogo} alt="view details" />
       </NavLink>
@@ -127,4 +128,8 @@ const DetailLink = styled.img`
     cursor: pointer;
     background-color: white;
   }
+`
+const FavButtonStyled = styled.button`
+  width: 20px;
+  height: 20px;
 `
