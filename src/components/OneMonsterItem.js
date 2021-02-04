@@ -8,23 +8,10 @@ OneMonsterItem.propTypes = {
   monster: PropTypes.object,
 }
 
-export default function OneMonsterItem({
-  monster,
-  addFavourite,
-  monsterIndex,
-  monsterDetails,
-  favourites,
-}) {
+export default function OneMonsterItem({ monster, addFavourite, arrayIndex }) {
   return (
     <ComponentContainer>
-      <div
-        onClick={() => {
-          addFavourite(monsterDetails, monsterIndex)
-          console.log(favourites)
-        }}
-      >
-        FAV
-      </div>
+      <button onClick={console.log(arrayIndex)}>FAV</button>
       <Container>
         <MonsterNameStyled>{monster.name}</MonsterNameStyled>
         <ContainerTypeCR>

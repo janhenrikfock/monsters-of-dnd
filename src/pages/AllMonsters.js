@@ -15,7 +15,6 @@ export default function AllMonsters({
   monsterDetails,
   useTitle,
   addFavourite,
-  favourites,
 }) {
   useTitle(0)
   const [searchResults, setSearchResults] = useState('')
@@ -45,9 +44,7 @@ export default function AllMonsters({
               key={monster.index}
               monster={monster}
               addFavourite={addFavourite}
-              monsterIndex={monster.index}
-              monsterDetails={monsterDetails}
-              favourites={favourites}
+              arrayIndex={monster.index}
             />
           ))}
         </Main>

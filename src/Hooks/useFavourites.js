@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
-export default function useFavourites(monsterDetails, index) {
+export default function useFavourites(monsterDetails) {
   const [favourites, setFavourites] = useState([])
 
-  function addFavourite(monsterDetails, index) {
+  function addFavourite(index) {
     const previous = monsterDetails.slice(0, index)
     const marked = monsterDetails.splice(index, 1)
     const following = monsterDetails.slice(index + 1, -1)
@@ -14,5 +14,6 @@ export default function useFavourites(monsterDetails, index) {
     }
     setFavourites([...previous, newFavourite, ...following])
   }
+
   return { favourites, addFavourite }
 }

@@ -57,8 +57,8 @@ export default function App() {
           monsterDetails={monsterDetails}
           setMonsterDetails={setMonsterDetails}
           useTitle={useTitle}
-          addFavourite={addFavourite}
           favourites={favourites}
+          addFavourite={addFavourite}
         />
       </Route>
       {monsterDetails.map((monster) => (
