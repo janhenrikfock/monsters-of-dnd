@@ -129,7 +129,4 @@ const DetailLink = styled.img`
     background-color: white;
   }
 `
-const FavButtonStyled = styled.button`
-  width: 20px;
-  height: 20px;
-`
+const FavButtonStyled = styled.button``
