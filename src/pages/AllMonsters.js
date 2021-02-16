@@ -14,7 +14,7 @@ export default function AllMonsters({
   loading,
   monsterDetails,
   useTitle,
-  addFavourite,
+  toggleFavourite,
 }) {
   useTitle(0)
 
@@ -43,7 +43,7 @@ export default function AllMonsters({
             <OneMonsterItem
               key={monster.index}
               monster={monster}
-              addFavourite={addFavourite}
+              toggleFavourite={toggleFavourite}
             />
           ))}
         </Main>

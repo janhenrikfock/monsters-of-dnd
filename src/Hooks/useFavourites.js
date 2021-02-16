@@ -4,7 +4,7 @@ import { useState } from 'react'
 export default function useFavourites(monsterDetails = []) {
   const [favourites, setFavourites] = useState([])
 
-  function addFavourite(monsterIndex) {
+  function toggleFavourite(monsterIndex) {
     const indexMarkedObject = monsterDetails.findIndex(
       (monster) => monster.index === monsterIndex
     )
@@ -13,14 +13,19 @@ export default function useFavourites(monsterDetails = []) {
     const markedObject = monsterDetails.find((monster) => {
       return monster.index === monsterIndex
     })
-    const favouriteMonster = {
-      ...markedObject,
-      favourite: true,
+    if (!markedObject.favourite) {
+      const favouriteMonster = {
+        ...markedObject,
+        favourite: true,
+      }
+      setFavourites([...prev, favouriteMonster, ...following])
+      saveLocally('monsterdetails', [...prev, favouriteMonster, ...following])
+    } else {
+      delete markedObject['favourite']
+      setFavourites([...prev, markedObject, ...following])
+      saveLocally('monsterdetails', [...prev, markedObject, ...following])
     }
-
-    setFavourites([...prev, favouriteMonster, ...following])
-    saveLocally('monsterdetails', [...prev, favouriteMonster, ...following])
   }
 
-  return { favourites, addFavourite }
+  return { favourites, toggleFavourite }
 }

@@ -8,7 +8,7 @@ OneMonsterItem.propTypes = {
   monster: PropTypes.object,
 }
 
-export default function OneMonsterItem({ monster, addFavourite }) {
+export default function OneMonsterItem({ monster, toggleFavourite }) {
   return (
     <ComponentContainer>
       <Container>
@@ -26,7 +26,7 @@ export default function OneMonsterItem({ monster, addFavourite }) {
           <ParagraphCR>CR:{monster.challenge_rating}</ParagraphCR>
         </ContainerTypeCR>
       </Container>
-      <FavButtonStyled onClick={() => addFavourite(monster.index)}>
+      <FavButtonStyled onClick={() => toggleFavourite(monster.index)}>
         FAV
       </FavButtonStyled>
       <NavLink to={'/monster/' + monster.index}>

@@ -10,7 +10,7 @@ export default function App() {
   const [monsterDetails, setMonsterDetails] = useState([])
   const [loading, setLoading] = useState(false)
   const favourites = useFavourites(monsterDetails)
-
+  localStorage.clear()
   useEffect(() => {
     const locallyLoadedMonsterNames = JSON.parse(
       localStorage.getItem('monsternames')
