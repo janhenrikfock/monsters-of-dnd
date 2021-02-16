@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react'
 import saveLocally from '../components/lib/saveLocally'
+import { useState } from 'react'
 
-export default function useFavourites(monsterDetails) {
+export default function useFavourites(monsterDetails = []) {
   const [favourites, setFavourites] = useState([])
 
   function addFavourite(monsterIndex) {
@@ -17,12 +17,10 @@ export default function useFavourites(monsterDetails) {
       ...markedObject,
       favourite: true,
     }
-    console.log(favouriteMonster)
-    setFavourites([...prev, favouriteMonster, ...following])
-  }
-  useEffect(() => {
-    saveLocally('monsterdetails', favourites)
-  }, [favourites])
 
-  return { addFavourite }
+    setFavourites([...prev, favouriteMonster, ...following])
+    saveLocally('monsterdetails', [...prev, favouriteMonster, ...following])
+  }
+
+  return { favourites, addFavourite }
 }
