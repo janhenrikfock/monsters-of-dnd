@@ -10,7 +10,7 @@ export default function App() {
   const [monsterDetails, setMonsterDetails] = useState([])
   const [loading, setLoading] = useState(false)
   const favourites = useFavourites(monsterDetails)
-  localStorage.clear()
+
   useEffect(() => {
     const locallyLoadedMonsterNames = JSON.parse(
       localStorage.getItem('monsternames')
@@ -23,6 +23,7 @@ export default function App() {
       locallyLoadedMonsterNames.length === 0 ||
       locallyLoadedMonsterNames.length !== locallyLoadedMonsterDetails.length
     ) {
+      localStorage.clear()
       setLoading(true)
       fetch(`https://www.dnd5eapi.co/api/monsters`)
         .then((res) => res.json())

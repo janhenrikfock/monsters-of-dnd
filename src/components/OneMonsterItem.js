@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import booklogo from './images/book.png'
 
 OneMonsterItem.propTypes = {
@@ -11,27 +11,28 @@ OneMonsterItem.propTypes = {
 export default function OneMonsterItem({ monster, toggleFavourite }) {
   return (
     <ComponentContainer>
-      <Container>
-        <MonsterNameStyled>{monster.name}</MonsterNameStyled>
-        <ContainerTypeCR>
-          <ContainerTags>
-            <TypeTag>{monster.type}</TypeTag>
-            <AlignmentTag
-              alignmentColors={monster.alignment}
-              noTagRendered={monster.alignment}
-            >
-              {monster.alignment}
-            </AlignmentTag>
-          </ContainerTags>
-          <ParagraphCR>CR:{monster.challenge_rating}</ParagraphCR>
-        </ContainerTypeCR>
-      </Container>
-      <FavButtonStyled onClick={() => toggleFavourite(monster.index)}>
-        FAV
-      </FavButtonStyled>
       <NavLink to={'/monster/' + monster.index}>
-        <DetailLink src={booklogo} alt="view details" />
+        <Container>
+          <MonsterNameStyled>{monster.name}</MonsterNameStyled>
+          <ContainerTypeCR>
+            <ContainerTags>
+              <TypeTag>{monster.type}</TypeTag>
+              <AlignmentTag
+                alignmentColors={monster.alignment}
+                noTagRendered={monster.alignment}
+              >
+                {monster.alignment}
+              </AlignmentTag>
+            </ContainerTags>
+            <ParagraphCR>CR:{monster.challenge_rating}</ParagraphCR>
+          </ContainerTypeCR>
+        </Container>
       </NavLink>
+      <DetailLink
+        src={booklogo}
+        alt="view details"
+        onClick={() => toggleFavourite(monster.index)}
+      />
     </ComponentContainer>
   )
 }
@@ -129,4 +130,3 @@ const DetailLink = styled.img`
     background-color: white;
   }
 `
-const FavButtonStyled = styled.button``

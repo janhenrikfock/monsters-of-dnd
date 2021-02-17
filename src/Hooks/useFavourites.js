@@ -9,7 +9,7 @@ export default function useFavourites(monsterDetails = []) {
       (monster) => monster.index === monsterIndex
     )
     const prev = monsterDetails.slice(0, indexMarkedObject)
-    const following = monsterDetails.slice(indexMarkedObject + 1, -1)
+    const following = monsterDetails.slice(indexMarkedObject + 1)
     const markedObject = monsterDetails.find((monster) => {
       return monster.index === monsterIndex
     })
@@ -18,10 +18,12 @@ export default function useFavourites(monsterDetails = []) {
         ...markedObject,
         favourite: true,
       }
+      console.log(favouriteMonster)
       setFavourites([...prev, favouriteMonster, ...following])
       saveLocally('monsterdetails', [...prev, favouriteMonster, ...following])
     } else {
       delete markedObject['favourite']
+      console.log(markedObject)
       setFavourites([...prev, markedObject, ...following])
       saveLocally('monsterdetails', [...prev, markedObject, ...following])
     }
