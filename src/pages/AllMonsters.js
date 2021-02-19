@@ -93,7 +93,7 @@ const Header = styled.header`
   background: white;
 `
 const Main = styled.main`
-  margin-top: 135px;
+  margin-top: 140px;
 `
 const Headline = styled.h1`
   color: black;

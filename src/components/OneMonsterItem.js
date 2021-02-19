@@ -62,9 +62,11 @@ const activeStyle = {
 }
 
 const ComponentContainer = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--bordergrey);
+  justify-content: space-between;
 `
 const Container = styled.div`
   width: 100%;
