@@ -17,8 +17,9 @@ export default function AllMonsters({
   toggleFavourite,
 }) {
   useTitle(0)
-
+  const [favourites, setFavourites] = useState([])
   const [searchResults, setSearchResults] = useState('')
+
   const fuse = new Fuse(monsterDetails, {
     keys: ['name', 'type', 'challenge_rating', 'alignment'],
   })
