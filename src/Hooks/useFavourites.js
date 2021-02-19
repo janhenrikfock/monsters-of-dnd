@@ -18,12 +18,10 @@ export default function useFavourites(monsterDetails = []) {
         ...markedObject,
         favourite: true,
       }
-      console.log(favouriteMonster)
       setFavourites([...prev, favouriteMonster, ...following])
       saveLocally('monsterdetails', [...prev, favouriteMonster, ...following])
     } else {
       delete markedObject['favourite']
-      console.log(markedObject)
       setFavourites([...prev, markedObject, ...following])
       saveLocally('monsterdetails', [...prev, markedObject, ...following])
     }
