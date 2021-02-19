@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import LoadingAnimation from './LoadingAnimation'
 import OneMonsterItem from '../components/OneMonsterItem'
 import Fuse from 'fuse.js'
+import star from '../components/images/star.svg'
 
 AllMonsters.propTypes = {
   loading: PropTypes.bool,
@@ -17,13 +18,24 @@ export default function AllMonsters({
   toggleFavourite,
 }) {
   useTitle(0)
-  const [favourites, setFavourites] = useState([])
+  const [favourites, setFavourites] = useState(false)
+  const [filteredMonsters, setFilteredMonsters] = useState([])
   const [searchResults, setSearchResults] = useState('')
 
-  const fuse = new Fuse(monsterDetails, {
+  useEffect(() => {
+    if (!favourites) {
+      setFilteredMonsters(monsterDetails)
+    } else {
+      setFilteredMonsters(
+        monsterDetails.filter((monster) => monster.favourite === true)
+      )
+    }
+  }, [favourites, monsterDetails])
+
+  const fuse = new Fuse(filteredMonsters, {
     keys: ['name', 'type', 'challenge_rating', 'alignment'],
   })
-  const results = searchResults ? fuse.search(searchResults) : monsterDetails
+  const results = searchResults ? fuse.search(searchResults) : filteredMonsters
 
   if (loading) {
     return <LoadingAnimation />
@@ -32,6 +44,11 @@ export default function AllMonsters({
       <>
         <Header>
           <Headline>Monsters of DnD</Headline>
+          <Favourite
+            src={star}
+            alt={'show only favourites'}
+            onClick={() => toggleFavouritesFilter(favourites, setFavourites)}
+          />
           <Input
             type="text"
             value={searchResults}
@@ -54,6 +71,9 @@ export default function AllMonsters({
   function handleInput({ currentTarget = {} }) {
     const { value } = currentTarget
     setSearchResults(value)
+  }
+  function toggleFavouritesFilter(favourites, setFavourites) {
+    !favourites ? setFavourites(true) : setFavourites(false)
   }
 }
 const Header = styled.header`
@@ -82,4 +102,18 @@ const Input = styled.input`
   display: block;
   text-align: center;
   font-size: 18px;
+`
+const Favourite = styled.img`
+  max-height: 50px;
+  max-width: 50px;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 5px 10px;
+  border: 2px solid var(--highlightcolor);
+  transition-property: background-color;
+  transition-duration: 0.1s;
+  &:hover {
+    cursor: pointer;
+    background-color: white;
+  }
 `
