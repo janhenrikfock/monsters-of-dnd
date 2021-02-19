@@ -4,25 +4,26 @@ import saveLocally from './components/lib/saveLocally'
 import { useTitle } from './Hooks/useTitle'
 import AllMonsters from './pages/AllMonsters'
 import MonsterDetails from './pages/MonsterDetails'
+import useFavourites from './Hooks/useFavourites'
 
 export default function App() {
   const [monsterDetails, setMonsterDetails] = useState([])
   const [loading, setLoading] = useState(false)
+  const favourites = useFavourites(monsterDetails)
 
   useEffect(() => {
     const locallyLoadedMonsterNames = JSON.parse(
       localStorage.getItem('monsternames')
     )
-
     const locallyLoadedMonsterDetails = JSON.parse(
       localStorage.getItem('monsterdetails')
     )
-
     if (
       !locallyLoadedMonsterNames ||
       locallyLoadedMonsterNames.length === 0 ||
       locallyLoadedMonsterNames.length !== locallyLoadedMonsterDetails.length
     ) {
+      localStorage.clear()
       setLoading(true)
       fetch(`https://www.dnd5eapi.co/api/monsters`)
         .then((res) => res.json())
@@ -46,11 +47,14 @@ export default function App() {
   } else if (localStorage.getItem('monsterdetails')) {
     setMonsterDetails(JSON.parse(localStorage.getItem('monsterdetails')))
   }
-
+  useEffect(() => {
+    setMonsterDetails(favourites.favourites)
+  }, [favourites.favourites])
   return (
     <Switch>
       <Route exact path="/">
         <AllMonsters
+          {...favourites}
           loading={loading}
           monsterDetails={monsterDetails}
           setMonsterDetails={setMonsterDetails}

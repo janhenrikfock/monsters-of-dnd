@@ -1,35 +1,39 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import booklogo from './images/book.png'
+import styled from 'styled-components/macro'
+import star from './images/star.svg'
 
 OneMonsterItem.propTypes = {
   monster: PropTypes.object,
 }
 
-export default function OneMonsterItem({ monster }) {
+export default function OneMonsterItem({ monster, toggleFavourite }) {
   return (
     <ComponentContainer>
-      <Container>
-        <MonsterNameStyled>{monster.name}</MonsterNameStyled>
-        <ContainerTypeCR>
-          <ContainerTags>
-            <TypeTag>{monster.type}</TypeTag>
-            <AlignmentTag
-              alignmentColors={monster.alignment}
-              noTagRendered={monster.alignment}
-            >
-              {monster.alignment}
-            </AlignmentTag>
-          </ContainerTags>
-          <ParagraphCR>CR:{monster.challenge_rating}</ParagraphCR>
-        </ContainerTypeCR>
-      </Container>
-
       <NavLink to={'/monster/' + monster.index}>
-        <DetailLink src={booklogo} alt="view details" />
+        <Container>
+          <MonsterNameStyled>{monster.name}</MonsterNameStyled>
+          <ContainerTypeCR>
+            <ContainerTags>
+              <TypeTag>{monster.type}</TypeTag>
+              <AlignmentTag
+                alignmentColors={monster.alignment}
+                noTagRendered={monster.alignment}
+              >
+                {monster.alignment}
+              </AlignmentTag>
+            </ContainerTags>
+            <ParagraphCR>CR:{monster.challenge_rating}</ParagraphCR>
+          </ContainerTypeCR>
+        </Container>
       </NavLink>
+      <Favourite
+        src={star}
+        alt="mark as favourite"
+        onClick={() => toggleFavourite(monster.index)}
+        activeFavourite={monster.favourite}
+      />
     </ComponentContainer>
   )
 }
@@ -52,11 +56,17 @@ const Alignments = {
   'neutral good (50%) or neutral evil (50%)': 'none',
   'any alignment': 'none',
 }
+const activeStyle = {
+  false: 'lightgrey',
+  true: 'yellow',
+}
 
 const ComponentContainer = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--bordergrey);
+  justify-content: space-between;
 `
 const Container = styled.div`
   width: 100%;
@@ -112,14 +122,15 @@ const ParagraphCR = styled.p`
   text-align: right;
   text-decoration: none;
 `
-const DetailLink = styled.img`
+const Favourite = styled.img`
   max-height: 50px;
   max-width: 50px;
   border-radius: 6px;
   padding: 10px;
   margin: 5px 10px;
   border: 2px solid var(--highlightcolor);
-  background-color: lightgrey;
+  background-color: ${({ activeFavourite = false }) =>
+    activeStyle[activeFavourite]};
   transition-property: background-color;
   transition-duration: 0.1s;
   &:hover {
