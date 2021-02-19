@@ -44,17 +44,20 @@ export default function AllMonsters({
       <>
         <Header>
           <Headline>Monsters of DnD</Headline>
-          <Favourite
-            src={star}
-            alt={'show only favourites'}
-            onClick={() => toggleFavouritesFilter(favourites, setFavourites)}
-          />
-          <Input
-            type="text"
-            value={searchResults}
-            onChange={handleInput}
-            placeholder={'Search for Monster'}
-          />
+          <ControlsContainer>
+            <Favourite
+              src={star}
+              alt={'show only favourites'}
+              onClick={() => toggleFavouritesFilter(favourites, setFavourites)}
+              activeFavourites={favourites}
+            />
+            <Input
+              type="text"
+              value={searchResults}
+              onChange={handleInput}
+              placeholder={'Search for Monster'}
+            />
+          </ControlsContainer>
         </Header>
         <Main>
           {results.map((monster) => (
@@ -76,7 +79,12 @@ export default function AllMonsters({
     !favourites ? setFavourites(true) : setFavourites(false)
   }
 }
+const activeStyle = {
+  false: 'lightgrey',
+  true: 'lightblue',
+}
 const Header = styled.header`
+  margin: 0;
   position: fixed;
   top: 0px;
   border-bottom: 1px solid #d0d0cd;
@@ -85,7 +93,7 @@ const Header = styled.header`
   background: white;
 `
 const Main = styled.main`
-  margin-top: 120px;
+  margin-top: 135px;
 `
 const Headline = styled.h1`
   color: black;
@@ -95,20 +103,25 @@ const Headline = styled.h1`
   font-family: serif;
   padding-bottom: 13px;
 `
+const ControlsContainer = styled.section`
+  display: flex;
+  padding: 5px;
+  margin: 0;
+`
 const Input = styled.input`
   width: 80%;
   line-height: 26px;
-  margin-left: 10%;
-  display: block;
+  margin-left: 5%;
+  display: inline-block;
   text-align: center;
   font-size: 18px;
 `
 const Favourite = styled.img`
-  max-height: 50px;
-  max-width: 50px;
+  max-height: 45px;
+  max-width: 45px;
   border-radius: 6px;
+  background-color: ${({ activeFavourites }) => activeStyle[activeFavourites]};
   padding: 10px;
-  margin: 5px 10px;
   border: 2px solid var(--highlightcolor);
   transition-property: background-color;
   transition-duration: 0.1s;
