@@ -60,13 +60,17 @@ export default function AllMonsters({
           </ControlsContainer>
         </Header>
         <Main>
-          {results.map((monster) => (
-            <OneMonsterItem
-              key={monster.index}
-              monster={monster}
-              toggleFavourite={toggleFavourite}
-            />
-          ))}
+          {favourites && results.length === 0 ? (
+            <p>You have no Favourites marked yet</p>
+          ) : (
+            results.map((monster) => (
+              <OneMonsterItem
+                key={monster.index}
+                monster={monster}
+                toggleFavourite={toggleFavourite}
+              />
+            ))
+          )}
         </Main>
       </>
     )
