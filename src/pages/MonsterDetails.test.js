@@ -73,7 +73,6 @@ describe('MonsterDetails', () => {
       },
     ],
   }
-  useTitle(monster)
   window.scrollTo(0, 0)
   it.only('Displays the monstername as headline', () => {
     const { getByText } = render(
