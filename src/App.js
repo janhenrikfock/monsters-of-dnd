@@ -8,7 +8,7 @@ import useFavourites from './Hooks/useFavourites'
 
 export default function App() {
   const [monsterDetails, setMonsterDetails] = useState([])
-  const [loading, setLoading] = useState(true)
+
   const favourites = useFavourites(monsterDetails)
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function App() {
       locallyLoadedMonsterNames.length !== locallyLoadedMonsterDetails.length
     ) {
       localStorage.clear()
-      setLoading(true)
+
       fetch(`https://www.dnd5eapi.co/api/monsters`)
         .then((res) => res.json())
         .then((data) => {
@@ -35,7 +35,6 @@ export default function App() {
               .then((data) => {
                 setMonsterDetails((monsterDetails) => [...monsterDetails, data])
               })
-              .then(setLoading(true))
           })
         })
         .catch((err) => console.log(err))
@@ -55,7 +54,6 @@ export default function App() {
       <Route exact path="/">
         <AllMonsters
           {...favourites}
-          loading={loading}
           monsterDetails={monsterDetails}
           setMonsterDetails={setMonsterDetails}
           useTitle={useTitle}

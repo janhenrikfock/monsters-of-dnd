@@ -12,7 +12,6 @@ AllMonsters.propTypes = {
 }
 
 export default function AllMonsters({
-  loading,
   monsterDetails,
   useTitle,
   toggleFavourite,
@@ -67,7 +66,7 @@ export default function AllMonsters({
         </Header>
         <Main>
           {favourites && results.length === 0 ? (
-            <p>You have no Favourites marked yet</p>
+            <NoFavourites>You have no Favourites marked.</NoFavourites>
           ) : (
             results.map((monster) => (
               <OneMonsterItem
@@ -139,4 +138,8 @@ const Favourite = styled.img`
     cursor: pointer;
     background-color: white;
   }
+`
+const NoFavourites = styled.p`
+  margin-top: 50%;
+  text-align: center;
 `
