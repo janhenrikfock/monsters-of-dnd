@@ -12,7 +12,6 @@ AllMonsters.propTypes = {
 }
 
 export default function AllMonsters({
-  loading,
   monsterDetails,
   useTitle,
   toggleFavourite,
@@ -21,6 +20,9 @@ export default function AllMonsters({
   const [favourites, setFavourites] = useState(false)
   const [filteredMonsters, setFilteredMonsters] = useState([])
   const [searchResults, setSearchResults] = useState('')
+  const locallyLoadedMonsterNames = JSON.parse(
+    localStorage.getItem('monsternames')
+  )
 
   useEffect(() => {
     if (!favourites) {
@@ -37,8 +39,11 @@ export default function AllMonsters({
   })
   const results = searchResults ? fuse.search(searchResults) : filteredMonsters
 
-  if (loading) {
-    return <LoadingAnimation />
+  if (
+    monsterDetails.length === 0 ||
+    monsterDetails.length !== locallyLoadedMonsterNames.length
+  ) {
+    return <LoadingAnimation monsterDetails={monsterDetails} />
   } else {
     return (
       <>
@@ -60,13 +65,17 @@ export default function AllMonsters({
           </ControlsContainer>
         </Header>
         <Main>
-          {results.map((monster) => (
-            <OneMonsterItem
-              key={monster.index}
-              monster={monster}
-              toggleFavourite={toggleFavourite}
-            />
-          ))}
+          {favourites && results.length === 0 ? (
+            <NoFavourites>You have no Favourites marked.</NoFavourites>
+          ) : (
+            results.map((monster) => (
+              <OneMonsterItem
+                key={monster.index}
+                monster={monster}
+                toggleFavourite={toggleFavourite}
+              />
+            ))
+          )}
         </Main>
       </>
     )
@@ -129,4 +138,8 @@ const Favourite = styled.img`
     cursor: pointer;
     background-color: white;
   }
+`
+const NoFavourites = styled.p`
+  margin-top: 50%;
+  text-align: center;
 `
