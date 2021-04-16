@@ -8,7 +8,7 @@ import useFavourites from './Hooks/useFavourites'
 
 export default function App() {
   const [monsterDetails, setMonsterDetails] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const favourites = useFavourites(monsterDetails)
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export default function App() {
               .then((data) => {
                 setMonsterDetails((monsterDetails) => [...monsterDetails, data])
               })
-              .then(setLoading(false))
+              .then(setLoading(true))
           })
         })
         .catch((err) => console.log(err))

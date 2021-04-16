@@ -38,7 +38,7 @@ export default function AllMonsters({
   const results = searchResults ? fuse.search(searchResults) : filteredMonsters
 
   if (loading) {
-    return <LoadingAnimation />
+    return <LoadingAnimation monsterDetails={monsterDetails} />
   } else {
     return (
       <>
