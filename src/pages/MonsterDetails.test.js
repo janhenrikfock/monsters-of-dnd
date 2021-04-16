@@ -1,7 +1,8 @@
 import { render } from '@testing-library/react'
 import { MemoryRouter as Router } from 'react-router-dom'
-import React from 'react'
+import React, { useEffect } from 'react'
 import MonsterDetails from './MonsterDetails'
+import { useTitle } from '../Hooks/useTitle'
 
 describe('MonsterDetails', () => {
   const monster = {
@@ -72,11 +73,12 @@ describe('MonsterDetails', () => {
       },
     ],
   }
+  useTitle(monster)
   window.scrollTo(0, 0)
   it.only('Displays the monstername as headline', () => {
     const { getByText } = render(
       <Router>
-        <MonsterDetails monster={monster} />
+        <MonsterDetails monster={monster} useTitle={useTitle} />
       </Router>
     )
     expect(getByText(monster.name)).toBeInTheDocument()
