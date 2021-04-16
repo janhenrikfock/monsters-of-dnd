@@ -21,6 +21,9 @@ export default function AllMonsters({
   const [favourites, setFavourites] = useState(false)
   const [filteredMonsters, setFilteredMonsters] = useState([])
   const [searchResults, setSearchResults] = useState('')
+  const locallyLoadedMonsterNames = JSON.parse(
+    localStorage.getItem('monsternames')
+  )
 
   useEffect(() => {
     if (!favourites) {
@@ -37,7 +40,10 @@ export default function AllMonsters({
   })
   const results = searchResults ? fuse.search(searchResults) : filteredMonsters
 
-  if (loading) {
+  if (
+    monsterDetails.length === 0 ||
+    monsterDetails.length !== locallyLoadedMonsterNames.length
+  ) {
     return <LoadingAnimation monsterDetails={monsterDetails} />
   } else {
     return (
